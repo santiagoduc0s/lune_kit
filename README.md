@@ -29,24 +29,9 @@ Check the configuration in ```config/splash_screen/README.md```
 
 ---
 
-## Splash
-
----
-
-## Shorebird
-
----
-
-## Codemagic
-
----
-
-## Lose connection screen
-
----
-
-## Lose connection screen
-
+## Shorebird (optional)
+## Codemagic (optional)
+## Lose connection screen (optional)
 ## Biometric auth (optional)
 
 ---
