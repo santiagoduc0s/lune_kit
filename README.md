@@ -23,6 +23,10 @@ Check the configuration in ```config/app_name/README.md```
 
 Check the configuration in ```config/app_icon/README.md```
 
+## Splash
+
+Check the configuration in ```config/splash_screen/README.md```
+
 ---
 
 ## Splash
