@@ -9,44 +9,15 @@ dart pub global activate melos
 melos bootstrap
 ```
 
+---
+
 ## Set Id
 
-flutter pub add dev:change_app_package_name
+Check the configuration in ```config/app_id/README.md```
 
-### iOS
+## Set display app name
 
-```
-dart run change_app_package_name:main com.company.example --ios
-```
-
-### Android
-
-```
-dart run change_app_package_name:main com.company.example --android
-```
-
----
-
-## Set name of the app
-
-### iOS
-
-```
-fvm dart run rename_app:main ios="iOS Name"
-```
-
-### Android
-
-```
-fvm dart run rename_app:main android="Android Name"
-```
-
-### Web
-
-1. Go to ```web/index.html```
-2. Edit the label <title>Web Name</title>
-
----
+Check the configuration in ```config/app_name/README.md```
 
 ## Icon
 
