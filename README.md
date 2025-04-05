@@ -1,3 +1,80 @@
+## Config
+
+## Melos
+
+```
+# Install
+dart pub global activate melos
+
+melos bootstrap
+```
+
+## Set Id
+
+flutter pub add dev:change_app_package_name
+
+### iOS
+
+```
+dart run change_app_package_name:main com.company.example --ios
+```
+
+### Android
+
+```
+dart run change_app_package_name:main com.company.example --android
+```
+
+---
+
+## Set name of the app
+
+### iOS
+
+```
+fvm dart run rename_app:main ios="iOS Name"
+```
+
+### Android
+
+```
+fvm dart run rename_app:main android="Android Name"
+```
+
+### Web
+
+```
+fvm dart run rename_app:main web="Web Name"
+```
+
+---
+
+## Icon
+
+---
+
+## Splash
+
+---
+
+## Shorebird
+
+---
+
+## Codemagic
+
+---
+
+## Lose connection screen
+
+---
+
+## Lose connection screen
+
+## Biometric auth (optional)
+
+---
+
 # Example
 
 ![coverage][coverage_badge]
@@ -174,14 +251,3 @@ Alternatively, run `flutter run` and code generation will take place automatical
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
-
----
-
-### Melos
-
-```
-# Install
-dart pub global activate melos
-
-melos bootstrap
-```
