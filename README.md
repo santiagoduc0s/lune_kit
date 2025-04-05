@@ -43,9 +43,8 @@ fvm dart run rename_app:main android="Android Name"
 
 ### Web
 
-```
-fvm dart run rename_app:main web="Web Name"
-```
+1. Go to ```web/index.html```
+2. Edit the label <title>Web Name</title>
 
 ---
 
