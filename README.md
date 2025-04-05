@@ -50,6 +50,8 @@ fvm dart run rename_app:main android="Android Name"
 
 ## Icon
 
+Check the configuration in ```config/app_icon/README.md```
+
 ---
 
 ## Splash
