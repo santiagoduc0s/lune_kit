@@ -4,8 +4,8 @@ import 'package:flutter/widgets.dart';
 /// A utility class that debounces the execution of a function.
 ///
 /// This class is useful to control the rate at which a function is executed,
-/// particularly for events that fire rapidly, such as user input. 
-/// The [Debouncer] delays the execution of the action by a 
+/// particularly for events that fire rapidly, such as user input.
+/// The [Debouncer] delays the execution of the action by a
 /// specified [duration].
 class Debouncer {
   /// Creates a [Debouncer] with the specified [duration].
