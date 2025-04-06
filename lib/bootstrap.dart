@@ -11,6 +11,9 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
 
   Logger().d(Env.environment);
 
+  await KeyValueStorage.instance.initialize();
+  await AppPreference.instance.initialize();
+
   await Future.delayed(const Duration(milliseconds: 1000), () {});
 
   runApp(await builder());

@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:example/features/home/views/views.dart';
 import 'package:example/features/settings/views/views.dart';
 import 'package:example/features/splash/views/views.dart';
+import 'package:example/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -53,23 +54,53 @@ class AppRouter {
       SplashScreen.route(),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
-          return Scaffold(
-            body: navigationShell,
-            bottomNavigationBar: CustomBottomNavigationBar(
-              currentIndex: navigationShell.currentIndex,
-              onTabSelected: (index) => navigationShell.goBranch(index),
-              items: const [
-                CustomBottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                CustomBottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
-                  label: 'Settings',
-                ),
-              ],
-            ),
-          );
+          final l10n = context.l10n;
+          final isPortrait =
+              MediaQuery.of(context).orientation == Orientation.portrait;
+
+          return isPortrait
+              ? Scaffold(
+                  body: SafeArea(child: navigationShell),
+                  bottomNavigationBar: CustomBottomNavigationBar(
+                    currentIndex: navigationShell.currentIndex,
+                    onTabSelected: (index) => navigationShell.goBranch(index),
+                    items: [
+                      CustomBottomNavigationBarItem(
+                        icon: const Icon(Icons.home),
+                        label: l10n.home,
+                      ),
+                      CustomBottomNavigationBarItem(
+                        icon: const Icon(Icons.settings),
+                        label: l10n.settings,
+                      ),
+                    ],
+                  ),
+                )
+              : Scaffold(
+                  body: SafeArea(
+                    child: Row(
+                      children: [
+                        NavigationRail(
+                          selectedIndex: navigationShell.currentIndex,
+                          onDestinationSelected: (index) =>
+                              navigationShell.goBranch(index),
+                          labelType: NavigationRailLabelType.all,
+                          destinations: [
+                            NavigationRailDestination(
+                              icon: const Icon(Icons.home),
+                              label: Text(l10n.home),
+                            ),
+                            NavigationRailDestination(
+                              icon: const Icon(Icons.settings),
+                              label: Text(l10n.settings),
+                            ),
+                          ],
+                        ),
+                        Expanded(child: navigationShell),
+                      ],
+                    ),
+                  ),
+                );
         },
         branches: [
           StatefulShellBranch(
