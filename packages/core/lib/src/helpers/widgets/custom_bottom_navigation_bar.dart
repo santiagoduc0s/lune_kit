@@ -41,7 +41,16 @@ class CustomBottomNavigationBar extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return Container(
-      color: colors.surface,
+      decoration: BoxDecoration(
+        color: colors.surface,
+        boxShadow: [
+          BoxShadow(
+            color: colors.shadow.withValues(alpha: 0.1),
+            blurRadius: 10,
+            offset: const Offset(0, -2),
+          ),
+        ],
+      ),
       padding: EdgeInsets.only(
         top: 3.space,
         bottom: 3.space + paddingBottom,
@@ -83,19 +92,23 @@ class _NavItem extends StatelessWidget {
 
     return GestureDetector(
       onTap: () => onTap(index),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          IconTheme(
-            data: IconThemeData(color: color),
-            child: item.icon,
-          ),
-          SizedBox(height: 1.space),
-          Text(
-            item.label,
-            style: TextStyle(color: color),
-          ),
-        ],
+      child: Container(
+        color: Colors.transparent,
+        padding: EdgeInsets.all(1.space),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconTheme(
+              data: IconThemeData(color: color),
+              child: item.icon,
+            ),
+            SizedBox(height: 1.space),
+            Text(
+              item.label,
+              style: TextStyle(color: color),
+            ),
+          ],
+        ),
       ),
     );
   }
