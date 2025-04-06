@@ -1,3 +1,5 @@
+# Lune Kit
+
 ## Config
 
 ## Melos
@@ -29,14 +31,14 @@ Check the configuration in ```config/splash_screen/README.md```
 
 ---
 
+## Coming soon
+
 ## Shorebird (optional)
 ## Codemagic (optional)
 ## Lose connection screen (optional)
 ## Biometric auth (optional)
 
 ---
-
-# Example
 
 ![coverage][coverage_badge]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
