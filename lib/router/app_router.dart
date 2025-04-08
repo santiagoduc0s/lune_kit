@@ -1,7 +1,9 @@
 import 'package:core/core.dart';
 import 'package:example/features/home/views/views.dart';
+import 'package:example/features/privacy_policy/views/views.dart';
 import 'package:example/features/settings/views/views.dart';
 import 'package:example/features/splash/views/views.dart';
+import 'package:example/features/terms_conditions/views/views.dart';
 import 'package:example/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -60,16 +62,21 @@ class AppRouter {
 
           return isPortrait
               ? Scaffold(
-                  body: SafeArea(child: navigationShell),
-                  bottomNavigationBar: CustomBottomNavigationBar(
-                    currentIndex: navigationShell.currentIndex,
-                    onTabSelected: (index) => navigationShell.goBranch(index),
-                    items: [
-                      CustomBottomNavigationBarItem(
+                  body: navigationShell,
+                  bottomNavigationBar: NavigationBar(
+                    selectedIndex: navigationShell.currentIndex,
+                    onDestinationSelected: (int index) {
+                      navigationShell.goBranch(
+                        index,
+                        initialLocation: index == navigationShell.currentIndex,
+                      );
+                    },
+                    destinations: [
+                      NavigationDestination(
                         icon: const Icon(Icons.home),
                         label: l10n.home,
                       ),
-                      CustomBottomNavigationBarItem(
+                      NavigationDestination(
                         icon: const Icon(Icons.settings),
                         label: l10n.settings,
                       ),
@@ -77,28 +84,31 @@ class AppRouter {
                   ),
                 )
               : Scaffold(
-                  body: SafeArea(
-                    child: Row(
-                      children: [
-                        NavigationRail(
-                          selectedIndex: navigationShell.currentIndex,
-                          onDestinationSelected: (index) =>
-                              navigationShell.goBranch(index),
-                          labelType: NavigationRailLabelType.all,
-                          destinations: [
-                            NavigationRailDestination(
-                              icon: const Icon(Icons.home),
-                              label: Text(l10n.home),
-                            ),
-                            NavigationRailDestination(
-                              icon: const Icon(Icons.settings),
-                              label: Text(l10n.settings),
-                            ),
-                          ],
-                        ),
-                        Expanded(child: navigationShell),
-                      ],
-                    ),
+                  body: Row(
+                    children: [
+                      NavigationRail(
+                        selectedIndex: navigationShell.currentIndex,
+                        onDestinationSelected: (int index) {
+                          navigationShell.goBranch(
+                            index,
+                            initialLocation:
+                                index == navigationShell.currentIndex,
+                          );
+                        },
+                        labelType: NavigationRailLabelType.all,
+                        destinations: [
+                          NavigationRailDestination(
+                            icon: const Icon(Icons.home),
+                            label: Text(l10n.home),
+                          ),
+                          NavigationRailDestination(
+                            icon: const Icon(Icons.settings),
+                            label: Text(l10n.settings),
+                          ),
+                        ],
+                      ),
+                      Expanded(child: navigationShell),
+                    ],
                   ),
                 );
         },
@@ -110,7 +120,12 @@ class AppRouter {
           ),
           StatefulShellBranch(
             routes: [
-              SettingsScreen.route(),
+              SettingsScreen.route(
+                routes: [
+                  TermsConditionsScreen.route(),
+                  PrivacyPolicyScreen.route(),
+                ],
+              ),
             ],
           ),
         ],
