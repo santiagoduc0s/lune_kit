@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:example/gen/assets.gen.dart';
+import 'package:example/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -33,9 +34,11 @@ class _PrivacyPolicyPageState extends State<PrivacyPolicyPage> {
   Widget build(BuildContext context) {
     final textStyles = Theme.of(context).textStyles;
 
+    final l10n = context.l10n;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Privacy Policy'),
+        title: Text(l10n.privacyPolicy),
       ),
       body: _markdownData.isEmpty
           ? const Center(child: CircularProgressIndicator())

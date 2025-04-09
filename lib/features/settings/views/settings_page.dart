@@ -34,7 +34,7 @@ class SettingsPage extends StatelessWidget {
                 AppRouter.instance.pushNamed<void>(TermsConditionsScreen.path);
               },
               style: buttonStyles.primaryFilled,
-              child: const Text('Terms & Conditions'),
+              child: Text(l10n.termsAndConditions),
             ),
             SizedBox(height: 5.space),
             FilledButton(
@@ -42,7 +42,7 @@ class SettingsPage extends StatelessWidget {
                 AppRouter.instance.pushNamed<void>(PrivacyPolicyScreen.path);
               },
               style: buttonStyles.primaryFilled,
-              child: const Text('Privacy Policy'),
+              child: Text(l10n.privacyPolicy),
             ),
           ],
         ),
