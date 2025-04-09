@@ -1,5 +1,5 @@
-import 'package:example/app/app.dart';
-import 'package:example/bootstrap.dart';
+import 'package:lune/app/app.dart';
+import 'package:lune/bootstrap.dart';
 
 void main() {
   bootstrap(() => const App());

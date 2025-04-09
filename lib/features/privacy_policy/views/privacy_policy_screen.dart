@@ -1,4 +1,4 @@
-import 'package:example/features/privacy_policy/views/views.dart';
+import 'package:lune/features/privacy_policy/views/views.dart';
 import 'package:go_router/go_router.dart';
 
 class PrivacyPolicyScreen {

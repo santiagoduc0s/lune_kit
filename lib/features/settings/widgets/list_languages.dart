@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
-import 'package:example/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lune/l10n/l10n.dart';
 
 class ListLanguages extends StatelessWidget {
   const ListLanguages({super.key});
@@ -24,7 +24,8 @@ class ListLanguages extends StatelessWidget {
         type: ButtonType.filled,
         onPressed: () async {
           final locale = await CustomBottomModal.instance.show<Locale>(
-            Column(
+            isScrollControlled: true,
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(height: 2.space),

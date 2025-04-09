@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
-import 'package:example/gen/assets.gen.dart';
-import 'package:example/l10n/l10n.dart';
+import 'package:lune/gen/assets.gen.dart';
+import 'package:lune/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';

@@ -1,4 +1,4 @@
-import 'package:example/l10n/l10n.dart';
+import 'package:lune/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

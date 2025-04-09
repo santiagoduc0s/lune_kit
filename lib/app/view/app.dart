@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
-import 'package:example/l10n/l10n.dart';
-import 'package:example/router/app_router.dart';
-import 'package:example/utils/localization.dart';
+import 'package:lune/l10n/l10n.dart';
+import 'package:lune/router/app_router.dart';
+import 'package:lune/utils/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

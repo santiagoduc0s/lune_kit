@@ -1,10 +1,10 @@
 import 'package:core/core.dart';
-import 'package:example/features/home/views/views.dart';
-import 'package:example/features/privacy_policy/views/views.dart';
-import 'package:example/features/settings/views/views.dart';
-import 'package:example/features/splash/views/views.dart';
-import 'package:example/features/terms_conditions/views/views.dart';
-import 'package:example/l10n/l10n.dart';
+import 'package:lune/features/home/views/views.dart';
+import 'package:lune/features/privacy_policy/views/views.dart';
+import 'package:lune/features/settings/views/views.dart';
+import 'package:lune/features/splash/views/views.dart';
+import 'package:lune/features/terms_conditions/views/views.dart';
+import 'package:lune/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

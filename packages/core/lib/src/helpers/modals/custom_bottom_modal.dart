@@ -10,8 +10,8 @@ class CustomBottomModal {
   static final CustomBottomModal instance = CustomBottomModal._singleton();
 
   /// Shows a modal bottom sheet with the given [child] widget.
-  Future<T?> show<T>(
-    Widget child, {
+  Future<T?> show<T>({
+    required Widget child,
     bool useFullHeight = false,
     bool useSafeArea = true,
     bool isScrollControlled = false,

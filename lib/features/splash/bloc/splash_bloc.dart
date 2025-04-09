@@ -1,6 +1,6 @@
-import 'package:example/features/home/home.dart';
-import 'package:example/features/splash/bloc/bloc.dart';
-import 'package:example/router/app_router.dart';
+import 'package:lune/features/home/home.dart';
+import 'package:lune/features/splash/bloc/bloc.dart';
+import 'package:lune/router/app_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashBloc extends Bloc<SplashEvent, SplashState> {

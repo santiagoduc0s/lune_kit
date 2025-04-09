@@ -1,4 +1,4 @@
-import 'package:example/features/terms_conditions/views/views.dart';
+import 'package:lune/features/terms_conditions/views/views.dart';
 import 'package:go_router/go_router.dart';
 
 class TermsConditionsScreen {
