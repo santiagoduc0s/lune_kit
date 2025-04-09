@@ -1,5 +1,5 @@
-import 'package:lune/features/privacy_policy/views/views.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lune/features/privacy_policy/views/views.dart';
 
 class PrivacyPolicyScreen {
   const PrivacyPolicyScreen();
@@ -13,7 +13,7 @@ class PrivacyPolicyScreen {
         path: path,
         name: path,
         builder: (context, state) {
-            return const PrivacyPolicyPage();
+          return const PrivacyPolicyPage();
         },
         routes: routes,
       );

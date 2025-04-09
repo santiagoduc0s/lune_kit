@@ -1,5 +1,5 @@
-import 'package:lune/features/terms_conditions/views/views.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lune/features/terms_conditions/views/views.dart';
 
 class TermsConditionsScreen {
   const TermsConditionsScreen();
@@ -13,7 +13,7 @@ class TermsConditionsScreen {
         path: path,
         name: path,
         builder: (context, state) {
-            return const TermsConditionsPage();
+          return const TermsConditionsPage();
         },
         routes: routes,
       );

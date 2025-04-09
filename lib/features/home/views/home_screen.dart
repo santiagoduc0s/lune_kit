@@ -1,7 +1,7 @@
-import 'package:lune/features/home/bloc/bloc.dart';
-import 'package:lune/features/home/views/views.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lune/features/home/bloc/bloc.dart';
+import 'package:lune/features/home/views/views.dart';
 
 class HomeScreen {
   const HomeScreen();

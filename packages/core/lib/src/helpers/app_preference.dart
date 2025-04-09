@@ -119,11 +119,11 @@ class AppPreference extends Equatable {
       KeyValueStorage.instance.remove(_keyLocale);
     }
   }
-  
+
   @override
   List<Object?> get props => [
-    themeMode,
-    textScaler,
-    locale,
-  ];
+        themeMode,
+        textScaler,
+        locale,
+      ];
 }

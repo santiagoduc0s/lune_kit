@@ -1,10 +1,10 @@
 import 'package:core/core.dart';
+import 'package:flutter/material.dart';
 import 'package:lune/features/privacy_policy/views/privacy_policy_screen.dart';
 import 'package:lune/features/settings/widgets/widgets.dart';
 import 'package:lune/features/terms_conditions/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
 import 'package:lune/router/router.dart';
-import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -32,7 +32,8 @@ class SettingsPage extends StatelessWidget {
               SizedBox(height: 5.space),
               FilledButton(
                 onPressed: () {
-                  AppRouter.instance.pushNamed<void>(TermsConditionsScreen.path);
+                  AppRouter.instance
+                      .pushNamed<void>(TermsConditionsScreen.path);
                 },
                 style: buttonStyles.primaryFilled,
                 child: Text(l10n.termsAndConditions),

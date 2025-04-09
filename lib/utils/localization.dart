@@ -1,5 +1,5 @@
-import 'package:lune/l10n/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/l10n/l10n.dart';
 
 class Localization {
   Localization._singleton();
