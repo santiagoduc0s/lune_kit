@@ -2,7 +2,6 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:lune/l10n/l10n.dart';
 import 'package:lune/router/app_router.dart';
-import 'package:lune/utils/localization.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
@@ -42,10 +41,6 @@ class AppContent extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: AppRouter.instance.router,
       locale: appPreference.locale,
-      onGenerateTitle: (context) {
-        Localization.buildContext = context;
-        return context.l10n.appName;
-      },
       builder: (context, child) {
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(

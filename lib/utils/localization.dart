@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:core/core.dart';
 import 'package:lune/l10n/l10n.dart';
 
 class Localization {
@@ -6,9 +6,7 @@ class Localization {
 
   static final instance = Localization._singleton();
 
-  static late BuildContext buildContext;
-
   AppLocalizations get tr {
-    return AppLocalizations.of(buildContext);
+    return AppLocalizations.of(AppKeys.instance.getRootContext()!);
   }
 }
