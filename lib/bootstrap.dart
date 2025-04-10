@@ -12,8 +12,10 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   Logger().d(Env.environment);
 
   await KeyValueStorage.instance.initialize();
-  await AppPreference.instance.initialize();
 
+  AppPreference.instance.initialize();
+
+  /// Expand the time of the native splash screen
   await Future.delayed(const Duration(milliseconds: 1000), () {});
 
   runApp(await builder());
