@@ -7,6 +7,7 @@ import 'package:lune/features/settings/views/views.dart';
 import 'package:lune/features/splash/views/views.dart';
 import 'package:lune/features/terms_conditions/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
+import 'package:lune/widgets/app_wrapper.dart';
 
 class AppRouter {
   AppRouter._singleton();
@@ -54,39 +55,26 @@ class AppRouter {
     initialLocation: SplashScreen.path,
     routes: [
       SplashScreen.route(),
-      StatefulShellRoute.indexedStack(
-        builder: (context, state, navigationShell) {
-          final l10n = context.l10n;
-          final isPortrait =
-              MediaQuery.of(context).orientation == Orientation.portrait;
+      ShellRoute(
+        pageBuilder: (context, state, child) {
+          return RouteAnimation.fadeTransition(
+            key: state.pageKey,
+            child: AppWrapper(
+              child: child,
+            ),
+          );
+        },
+        routes: [
+          StatefulShellRoute.indexedStack(
+            builder: (context, state, navigationShell) {
+              final l10n = context.l10n;
+              final isPortrait =
+                  MediaQuery.of(context).orientation == Orientation.portrait;
 
-          return isPortrait
-              ? Scaffold(
-                  body: navigationShell,
-                  bottomNavigationBar: NavigationBar(
-                    selectedIndex: navigationShell.currentIndex,
-                    onDestinationSelected: (int index) {
-                      navigationShell.goBranch(
-                        index,
-                        initialLocation: index == navigationShell.currentIndex,
-                      );
-                    },
-                    destinations: [
-                      NavigationDestination(
-                        icon: const Icon(Icons.home),
-                        label: l10n.home,
-                      ),
-                      NavigationDestination(
-                        icon: const Icon(Icons.settings),
-                        label: l10n.settings,
-                      ),
-                    ],
-                  ),
-                )
-              : Scaffold(
-                  body: Row(
-                    children: [
-                      NavigationRail(
+              return isPortrait
+                  ? Scaffold(
+                      body: navigationShell,
+                      bottomNavigationBar: NavigationBar(
                         selectedIndex: navigationShell.currentIndex,
                         onDestinationSelected: (int index) {
                           navigationShell.goBranch(
@@ -95,35 +83,61 @@ class AppRouter {
                                 index == navigationShell.currentIndex,
                           );
                         },
-                        labelType: NavigationRailLabelType.all,
                         destinations: [
-                          NavigationRailDestination(
+                          NavigationDestination(
                             icon: const Icon(Icons.home),
-                            label: Text(l10n.home),
+                            label: l10n.home,
                           ),
-                          NavigationRailDestination(
+                          NavigationDestination(
                             icon: const Icon(Icons.settings),
-                            label: Text(l10n.settings),
+                            label: l10n.settings,
                           ),
                         ],
                       ),
-                      Expanded(child: navigationShell),
+                    )
+                  : Scaffold(
+                      body: Row(
+                        children: [
+                          NavigationRail(
+                            selectedIndex: navigationShell.currentIndex,
+                            onDestinationSelected: (int index) {
+                              navigationShell.goBranch(
+                                index,
+                                initialLocation:
+                                    index == navigationShell.currentIndex,
+                              );
+                            },
+                            labelType: NavigationRailLabelType.all,
+                            destinations: [
+                              NavigationRailDestination(
+                                icon: const Icon(Icons.home),
+                                label: Text(l10n.home),
+                              ),
+                              NavigationRailDestination(
+                                icon: const Icon(Icons.settings),
+                                label: Text(l10n.settings),
+                              ),
+                            ],
+                          ),
+                          Expanded(child: navigationShell),
+                        ],
+                      ),
+                    );
+            },
+            branches: [
+              StatefulShellBranch(
+                routes: [
+                  HomeScreen.route(),
+                ],
+              ),
+              StatefulShellBranch(
+                routes: [
+                  SettingsScreen.route(
+                    routes: [
+                      TermsConditionsScreen.route(),
+                      PrivacyPolicyScreen.route(),
                     ],
                   ),
-                );
-        },
-        branches: [
-          StatefulShellBranch(
-            routes: [
-              HomeScreen.route(),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              SettingsScreen.route(
-                routes: [
-                  TermsConditionsScreen.route(),
-                  PrivacyPolicyScreen.route(),
                 ],
               ),
             ],
