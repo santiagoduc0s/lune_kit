@@ -25,7 +25,7 @@ class AppPreference extends Equatable {
   static const String _keyLocale = 'locale';
 
   /// Initializes the app preferences.
-  Future<void> initialize() async {
+  void initialize() {
     // light, dark, system
     final storedThemeMode = KeyValueStorage.instance.get<String>(
       _keyThemeMode,
