@@ -1,8 +1,8 @@
-import 'package:core/src/ui/assets/assets.dart';
-import 'package:core/src/ui/icons/icons.dart';
-import 'package:core/src/ui/ui_spacing.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lune/ui/assets/assets.dart';
+import 'package:lune/ui/icons/icons.dart';
 
 /// Singleton class for UIIconLight.
 class UIIconLight implements UIIcon {

@@ -1,5 +1,6 @@
-import 'package:core/src/ui/ui.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/extensions/extensions.dart';
 
 /// Type of button to be used in [LoadingButton].
 enum ButtonType {

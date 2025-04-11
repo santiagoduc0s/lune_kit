@@ -12,10 +12,11 @@
         "--target",
         "lib/main_development.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "dev",
-      "cwd": "./",
+      "cwd": "./"
     },
     {
       "name": "Development - Profile",
@@ -28,7 +29,8 @@
         "--target",
         "lib/main_development.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "dev",
       "cwd": "./",
@@ -45,7 +47,8 @@
         "--target",
         "lib/main_development.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "dev",
       "cwd": "./",
@@ -62,10 +65,11 @@
         "--target",
         "lib/main_staging.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "stg",
-      "cwd": "./",
+      "cwd": "./"
     },
     {
       "name": "Staging - Profile",
@@ -78,7 +82,8 @@
         "--target",
         "lib/main_staging.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "stg",
       "cwd": "./",
@@ -95,7 +100,8 @@
         "--target",
         "lib/main_staging.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "stg",
       "cwd": "./",
@@ -112,10 +118,11 @@
         "--target",
         "lib/main_production.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "prod",
-      "cwd": "./",
+      "cwd": "./"
     },
     {
       "name": "Production - Profile",
@@ -128,7 +135,8 @@
         "--target",
         "lib/main_production.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "prod",
       "cwd": "./",
@@ -145,7 +153,8 @@
         "--target",
         "lib/main_production.dart",
         "--dart-define-from-file",
-        "env.json"
+        "env.json",
+        "--web-port=8080"
       ],
       "preLaunchTask": "prod",
       "cwd": "./",

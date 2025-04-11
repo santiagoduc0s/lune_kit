@@ -1,8 +1,6 @@
-import 'package:core/src/ui/assets/assets.dart';
-import 'package:core/src/ui/colors/colors.dart';
-import 'package:core/src/ui/icons/icons.dart';
-import 'package:core/src/ui/styles/styles.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/ui/ui.dart';
 
 /// Extension on [ThemeData] to provide access to UI based on the current theme.
 extension ThemeDataExtension on ThemeData {

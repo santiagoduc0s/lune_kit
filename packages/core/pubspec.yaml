@@ -26,8 +26,3 @@ dev_dependencies:
   very_good_analysis: ^6.0.0
 
 flutter:
-  assets:
-    - assets/dark/icons/
-    - assets/dark/images/
-    - assets/light/icons/
-    - assets/light/images/

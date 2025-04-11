@@ -7,7 +7,7 @@ import 'package:lune/features/settings/views/views.dart';
 import 'package:lune/features/splash/views/views.dart';
 import 'package:lune/features/terms_conditions/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
-import 'package:lune/widgets/app_wrapper.dart';
+import 'package:lune/ui/widgets/app_wrapper.dart';
 
 class AppRouter {
   AppRouter._singleton();

@@ -1,6 +1,6 @@
-import 'package:core/src/app_keys.dart';
-import 'package:core/src/ui/ui.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/extensions/extensions.dart';
 
 /// A singleton class for displaying custom snackbars.
 class CustomSnackbar {

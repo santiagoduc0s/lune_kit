@@ -29,13 +29,16 @@ Check the configuration in ```config/app_icon/README.md```
 
 Check the configuration in ```config/splash_screen/README.md```
 
+## Shorebird
+
+Check the configuration in ```config/shorebird/README.md```
+
 ---
 
 ## Coming soon
 
-## Shorebird (optional)
-## Codemagic (optional)
 ## Lose connection screen (optional)
+
 ## Biometric auth (optional)
 
 ---

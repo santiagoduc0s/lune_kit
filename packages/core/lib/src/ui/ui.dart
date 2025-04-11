@@ -1,7 +1,4 @@
-export 'assets/assets.dart';
 export 'colors/colors.dart';
-export 'extensions/extensions.dart';
-export 'icons/icons.dart';
 export 'src.dart';
 export 'styles/styles.dart';
 export 'themes/themes.dart';

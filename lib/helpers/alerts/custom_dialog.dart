@@ -1,5 +1,4 @@
-import 'package:core/src/app_keys.dart';
-import 'package:core/src/ui/ui_spacing.dart';
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 /// A singleton class for displaying custom dialog boxes

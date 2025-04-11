@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/extensions/extensions.dart';
 import 'package:lune/features/privacy_policy/views/privacy_policy_screen.dart';
 import 'package:lune/features/settings/widgets/widgets.dart';
 import 'package:lune/features/terms_conditions/views/views.dart';

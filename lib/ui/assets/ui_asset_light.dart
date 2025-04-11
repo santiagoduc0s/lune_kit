@@ -1,4 +1,5 @@
-import 'package:core/src/ui/assets/assets.dart';
+import 'package:lune/gen/assets.gen.dart';
+import 'package:lune/ui/assets/assets.dart';
 
 /// The light theme implementation of [UIAsset].
 class UIAssetLight implements UIAsset {
@@ -8,8 +9,5 @@ class UIAssetLight implements UIAsset {
   static final UIAssetLight instance = UIAssetLight._singleton();
 
   @override
-  String get folderAssetPath => 'packages/app_ui/assets/light';
-
-  @override
-  String get logo => '$folderAssetPath/icons/logo.svg';
+  String get logo => Assets.light.icons.logo;
 }

@@ -1,4 +1,5 @@
-import 'package:core/src/ui/assets/assets.dart';
+import 'package:lune/gen/assets.gen.dart';
+import 'package:lune/ui/assets/assets.dart';
 
 /// The dark theme implementation of [UIAsset].
 class UIAssetDark implements UIAsset {
@@ -8,8 +9,5 @@ class UIAssetDark implements UIAsset {
   static final UIAssetDark instance = UIAssetDark._singleton();
 
   @override
-  String get folderAssetPath => 'packages/app_ui/assets/dark';
-
-  @override
-  String get logo => '$folderAssetPath/icons/logo.svg';
+  String get logo => Assets.dark.icons.logo;
 }
