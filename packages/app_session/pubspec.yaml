@@ -6,6 +6,8 @@ publish_to: none
 dependencies:
   core:
     path: ../core
+  http_client:
+    path: ../http_client
 
 environment:
   sdk: ^3.5.0
