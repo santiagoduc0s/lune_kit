@@ -14,3 +14,4 @@ dev_dependencies:
 dependencies:
   app_session:
     path: ../app_session
+  firebase_auth: ^3.4.0

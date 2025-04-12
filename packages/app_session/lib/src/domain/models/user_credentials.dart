@@ -3,7 +3,7 @@ class UserCredential {
   /// Constructor
   UserCredential({
     required this.accessToken,
-    required this.typeAccessToken,
+    this.typeAccessToken,
   });
 
   /// Access token

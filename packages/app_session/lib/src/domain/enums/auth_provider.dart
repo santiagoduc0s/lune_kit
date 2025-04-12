@@ -1,5 +1,8 @@
 /// Enum representing different authentication providers.
 enum AuthProvider {
+  /// Unknown authentication provider.
+  unknown,
+
   /// Authentication using email and password.
   emailAndPassword,
 
@@ -39,6 +42,8 @@ enum AuthProvider {
         return 'password';
       case AuthProvider.facebook:
         return 'facebook.com';
+      case AuthProvider.unknown:
+        return 'unknown';
     }
   }
 }
