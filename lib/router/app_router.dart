@@ -46,8 +46,8 @@ class AppRouter {
     );
   }
 
-  void pop<T extends Object?>() {
-    return (router as GoRouter).pop<T>();
+  void pop<T extends Object?>(T? result) {
+    return (router as GoRouter).pop<T>(result);
   }
 
   RouterConfig<RouteMatchList> router = GoRouter(
