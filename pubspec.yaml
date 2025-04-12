@@ -7,6 +7,8 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
+  app_session:
+    path: packages/app_session
   bloc: ^8.1.4
   core:
     path: packages/core

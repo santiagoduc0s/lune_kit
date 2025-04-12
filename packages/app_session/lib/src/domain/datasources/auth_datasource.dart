@@ -1,7 +1,8 @@
 import 'dart:async';
 
-import 'package:app_session/src/application/data/requests/requests.dart';
+import 'package:app_session/src/domain/enums/enums.dart';
 import 'package:app_session/src/domain/models/models.dart';
+import 'package:app_session/src/domain/requests/requests.dart';
 
 /// Datasource for authentication.
 abstract class AuthDatasource {
@@ -43,4 +44,7 @@ abstract class AuthDatasource {
   Future<void> updatePassword(
     UpdatePasswordRequestBody body,
   );
+
+  /// Providers the current user.
+  Future<List<AuthProvider>> getProviders();
 }
