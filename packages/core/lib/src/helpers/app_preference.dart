@@ -62,7 +62,7 @@ class AppPreference extends Equatable {
   }
 
   /// Channel to notify changes in app preferences.
-  final DataNotifier<AppPreference> notifier = DataNotifier<AppPreference>();
+  final notifier = DataNotifier<AppPreference>();
 
   /// Stream to listen for changes in app preferences.
   Stream<AppPreference> get stream => notifier.stream;
