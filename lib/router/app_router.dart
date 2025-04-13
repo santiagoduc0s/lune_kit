@@ -46,7 +46,7 @@ class AppRouter {
     );
   }
 
-  void pop<T extends Object?>(T? result) {
+  void pop<T extends Object?>([T? result]) {
     return (router as GoRouter).pop<T>(result);
   }
 
