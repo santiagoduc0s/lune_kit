@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:app_session/src/domain/enums/enums.dart';
-import 'package:app_session/src/domain/models/models.dart';
-import 'package:app_session/src/domain/requests/requests.dart';
+import 'package:app_session/src/domain/auth/enums/enums.dart';
+import 'package:app_session/src/domain/auth/models/models.dart';
+import 'package:app_session/src/domain/auth/requests/requests.dart';
 
 /// Datasource for authentication.
 abstract class AuthDatasource {

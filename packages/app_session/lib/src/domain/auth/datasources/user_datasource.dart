@@ -1,4 +1,4 @@
-import 'package:app_session/src/domain/models/user.dart';
+import 'package:app_session/src/domain/auth/models/user.dart';
 
 /// Datasource interface for user operations.
 abstract class UserDatasource {
