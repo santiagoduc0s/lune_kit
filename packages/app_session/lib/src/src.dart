@@ -1,2 +1,2 @@
+export 'session_mixin.dart';
 export 'user.dart';
-export 'user_session.dart';
