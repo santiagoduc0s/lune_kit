@@ -9,6 +9,10 @@ mixin SessionMixin<T extends User> {
   /// The session value getter
   T? get user => _user;
 
+  set user(T? value) {
+    _user = value;
+  }
+
   /// The session value setter
   void signIn(SignInData<T> data);
 
@@ -54,19 +58,19 @@ class UserSessionExample with SessionMixin<User> {
 
   @override
   void signIn(SignInData<User> data) {
-    _user = data.user;
+    user = data.user;
     notifier.emit(data.user);
   }
 
   @override
   void signOut() {
-    _user = null;
+    user = null;
     notifier.emit(null);
   }
 
   @override
-  bool get isSignedIn => _user != null;
+  bool get isSignedIn => user != null;
 
   @override
-  bool get isSignedOut => _user == null;
+  bool get isSignedOut => user == null;
 }
