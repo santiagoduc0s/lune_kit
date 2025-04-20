@@ -1,4 +1,4 @@
-import 'package:app_session/src/domain/auth/models/models.dart';
+import 'package:app_session/src/user.dart';
 import 'package:core/core.dart';
 
 /// This class is used to manage the app's session
