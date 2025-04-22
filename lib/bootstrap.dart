@@ -3,13 +3,20 @@ import 'package:core/core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:logger/logger.dart';
+import 'package:lune/helpers/helpers.dart';
+
+void setupDependencies() {
+  Injector.register<Logger>(Logger());
+}
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterNativeSplash.preserve(
     widgetsBinding: WidgetsFlutterBinding.ensureInitialized(),
   );
 
-  Logger().d(Env.environment);
+  setupDependencies();
+
+  Injector.get<Logger>().d(Env.environment);
 
   await KeyValueStorage.instance.initialize();
 
