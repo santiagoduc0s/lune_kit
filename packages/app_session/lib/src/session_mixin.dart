@@ -14,7 +14,7 @@ mixin SessionMixin<T extends User> {
   }
 
   /// The session value setter
-  void signIn(SignInData<T> data);
+  void signIn(T data);
 
   /// The session value setter
   void signOut();
@@ -26,40 +26,37 @@ mixin SessionMixin<T extends User> {
   bool get isSignedOut;
 }
 
-/// This class is used to manage the sign in data
-///
-/// If you want to save more data for example a "token" you can
-/// add that information in this class and the do what you need
-/// in the signIn method
-class SignInData<T> {
-  /// Constructor [SignInData]
-  SignInData({
-    required this.user,
+/// EXAMPLE CLASS
+class UserExample extends User {
+  /// Constructor [UserExample]
+  const UserExample({
+    required super.id,
+    required this.name,
   });
 
-  /// The user
-  final T user;
+  /// The user name
+  final String name;
 }
 
 /// EXAMPLE CLASS: This class is used to manage the app's session
 /// A singleton session manager for any kind of User, create your
 /// own class adding the [SessionMixin]
-class UserSessionExample with SessionMixin<User> {
+class UserSessionExample with SessionMixin<UserExample> {
   UserSessionExample._singleton();
 
   /// Singleton instance of [UserSessionExample]
   static final instance = UserSessionExample._singleton();
 
   /// Singleton instance of the session
-  final notifier = DataNotifier<User?>();
+  final notifier = DataNotifier<UserExample?>();
 
   /// The session stream to listen the changes of the user
-  Stream<User?> get stream => notifier.stream;
+  Stream<UserExample?> get stream => notifier.stream;
 
   @override
-  void signIn(SignInData<User> data) {
-    user = data.user;
-    notifier.emit(data.user);
+  void signIn(UserExample user) {
+    this.user = user;
+    notifier.emit(user);
   }
 
   @override

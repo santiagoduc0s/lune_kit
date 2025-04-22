@@ -1,5 +1,5 @@
 /// User class
-class User {
+abstract class User {
   /// Constructor for User class
   const User({required this.id});
 
