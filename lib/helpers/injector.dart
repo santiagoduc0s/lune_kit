@@ -9,7 +9,7 @@ class Injector {
     _getIt.registerSingleton<T>(service);
   }
 
-  static T get<T>() {
+  static T get<T extends Object>() {
     return _getIt<T>();
   }
 
