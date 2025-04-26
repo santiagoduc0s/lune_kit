@@ -33,6 +33,7 @@ class AppContent extends StatelessWidget {
     final appPreference = context.watch<AppPreference>();
 
     return MaterialApp.router(
+      scaffoldMessengerKey: AppKeys.instance.scaffoldMessengerKey,
       debugShowCheckedModeBanner: false,
       theme: UIThemeLight.instance.theme,
       darkTheme: UIThemeDark.instance.theme,
