@@ -14,7 +14,7 @@ mixin SessionMixin<T extends User> {
   }
 
   /// The session value setter
-  void signIn(T data);
+  void setUser(T data);
 
   /// The session value setter
   void signOut();
@@ -54,7 +54,7 @@ class UserSessionExample with SessionMixin<UserExample> {
   Stream<UserExample?> get stream => notifier.stream;
 
   @override
-  void signIn(UserExample user) {
+  void setUser(UserExample user) {
     this.user = user;
     notifier.emit(user);
   }
