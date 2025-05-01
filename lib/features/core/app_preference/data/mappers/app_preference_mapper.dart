@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lune/features/app_preference/domain/entities/entities.dart';
+import 'package:lune/features/core/app_preference/domain/entities/entities.dart';
 
 abstract class AppPreferenceMapper {
   static AppPreferenceEntity fromJson(Map<String, dynamic> json) {

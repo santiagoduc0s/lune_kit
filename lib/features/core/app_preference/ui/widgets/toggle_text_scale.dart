@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:lune/features/app_preference/ui/notifier/notifier.dart';
+import 'package:lune/features/core/app_preference/ui/notifier/notifier.dart';
 import 'package:provider/provider.dart';
 
 /// A slider widget to adjust the text scaling factor.

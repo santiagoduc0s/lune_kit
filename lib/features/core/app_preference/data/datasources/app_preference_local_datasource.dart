@@ -1,5 +1,5 @@
 import 'package:lune/core/utils/utils.dart';
-import 'package:lune/features/app_preference/data/datasources/datasources.dart';
+import 'package:lune/features/core/app_preference/data/datasources/datasources.dart';
 
 class AppPreferenceLocalDatasource extends AppPreferenceDatasource {
   AppPreferenceLocalDatasource(this._storage);

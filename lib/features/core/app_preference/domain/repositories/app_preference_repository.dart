@@ -1,4 +1,4 @@
-import 'package:lune/features/app_preference/domain/entities/entities.dart';
+import 'package:lune/features/core/app_preference/domain/entities/entities.dart';
 
 abstract class AppPreferenceRepository {
   Future<AppPreferenceEntity> loadAppPreference();

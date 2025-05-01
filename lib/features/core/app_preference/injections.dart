@@ -1,10 +1,10 @@
 import 'package:core/core.dart';
 import 'package:lune/core/utils/utils.dart';
-import 'package:lune/features/app_preference/data/datasources/datasources.dart';
-import 'package:lune/features/app_preference/data/repositories/repositories.dart';
-import 'package:lune/features/app_preference/domain/repositories/repositories.dart';
-import 'package:lune/features/app_preference/domain/usecases/usecases.dart';
-import 'package:lune/features/app_preference/ui/notifier/notifier.dart';
+import 'package:lune/features/core/app_preference/data/datasources/datasources.dart';
+import 'package:lune/features/core/app_preference/data/repositories/repositories.dart';
+import 'package:lune/features/core/app_preference/domain/repositories/repositories.dart';
+import 'package:lune/features/core/app_preference/domain/usecases/usecases.dart';
+import 'package:lune/features/core/app_preference/ui/notifier/notifier.dart';
 
 Future<void> appPreferenceInjections() async {
   /// DATASOURCE

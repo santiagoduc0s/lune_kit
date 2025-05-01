@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lune/features/app_preference/domain/entities/entities.dart';
-import 'package:lune/features/app_preference/domain/usecases/usecases.dart';
+import 'package:lune/features/core/app_preference/domain/entities/entities.dart';
+import 'package:lune/features/core/app_preference/domain/usecases/usecases.dart';
 
 class AppPreferenceNotifier extends ChangeNotifier {
   AppPreferenceNotifier({

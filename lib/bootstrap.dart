@@ -4,7 +4,7 @@ import 'package:core/core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:lune/core/utils/utils.dart';
-import 'package:lune/features/app_preference/app_preference.dart';
+import 'package:lune/features/core/app_preference/app_preference.dart';
 
 Future<void> injectModules() async {
   await utilsInjections();
