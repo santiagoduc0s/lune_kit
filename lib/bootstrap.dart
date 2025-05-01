@@ -3,12 +3,14 @@ import 'dart:async';
 import 'package:core/core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:lune/core/ui/injections.dart';
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/app_preference/app_preference.dart';
 
 Future<void> injectModules() async {
   await utilsInjections();
   await appPreferenceInjections();
+  uiInjections();
 }
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {

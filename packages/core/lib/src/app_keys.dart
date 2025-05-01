@@ -14,4 +14,9 @@ class AppGlobalKey {
   static BuildContext? getRootContext() {
     return rootNavigatorKey.currentContext;
   }
+
+  /// Global key for the main navigator.
+  static ScaffoldMessengerState? scaffoldMessengerState() {
+    return scaffoldMessengerKey.currentState;
+  }
 }

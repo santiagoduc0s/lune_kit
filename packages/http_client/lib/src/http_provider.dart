@@ -10,11 +10,11 @@ abstract class HttpProvider {
   /// Executes an HTTP request.
   ///
   /// The [req] parameter is a [RequestHttp] object that encapsulates the
-  /// details of the request such as the URL path, HTTP method, and request 
+  /// details of the request such as the URL path, HTTP method, and request
   /// payload.
   ///
   /// Returns a [Future] that resolves to a [ResponseHttp] object containing
-  /// the HTTP response data, including the status code, response body, and 
+  /// the HTTP response data, including the status code, response body, and
   /// headers.
   // ignore: strict_raw_type
   Future<ResponseHttp> fetch(RequestHttp req);

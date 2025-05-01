@@ -59,9 +59,9 @@ enum HttpMethod {
 
   /// Creates an [HttpMethod] from its string representation.
   ///
-  /// The [method] parameter should be an uppercase string 
+  /// The [method] parameter should be an uppercase string
   /// representing the HTTP method.
-  /// If the provided string does not match any known HTTP 
+  /// If the provided string does not match any known HTTP
   /// method, an [ArgumentError] is thrown.
   static HttpMethod fromString(String method) {
     switch (method) {

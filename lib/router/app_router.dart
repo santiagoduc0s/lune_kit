@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lune/core/animations/animations.dart';
 import 'package:lune/features/home/views/views.dart';
 import 'package:lune/features/privacy_policy/views/views.dart';
 import 'package:lune/features/settings/views/views.dart';
