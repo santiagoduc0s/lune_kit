@@ -51,7 +51,7 @@ class AppRouter {
   }
 
   RouterConfig<RouteMatchList> router = GoRouter(
-    navigatorKey: AppKeys.instance.rootNavigatorKey,
+    navigatorKey: AppGlobalKey.rootNavigatorKey,
     initialLocation: SplashScreen.path,
     routes: [
       SplashScreen.route(),

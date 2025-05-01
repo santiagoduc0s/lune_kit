@@ -1,27 +1,16 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/features/app_preference/ui/notifier/notifier.dart';
 import 'package:provider/provider.dart';
 
-/// This widget is used to change the theme of the app.
-class ToggleButtonTheme extends StatefulWidget {
-  /// Creates an instance of [ToggleButtonTheme].
+class ToggleButtonTheme extends StatelessWidget {
   const ToggleButtonTheme({super.key});
 
   @override
-  State<ToggleButtonTheme> createState() => _ToggleButtonThemeState();
-}
-
-class _ToggleButtonThemeState extends State<ToggleButtonTheme> {
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final appPreference = context.watch<AppPreference>();
+    final prefs = context.watch<AppPreferenceNotifier>().prefs;
 
-    final themeMode = appPreference.themeMode;
+    final themeMode = prefs.themeMode;
 
     return ToggleButtons(
       borderRadius: BorderRadius.circular(2.space),
@@ -33,11 +22,13 @@ class _ToggleButtonThemeState extends State<ToggleButtonTheme> {
       onPressed: (int index) {
         switch (index) {
           case 0:
-            AppPreference.instance.setThemeMode(ThemeMode.light);
+            context.read<AppPreferenceNotifier>().setThemeMode(ThemeMode.light);
           case 1:
-            AppPreference.instance.setThemeMode(ThemeMode.dark);
+            context.read<AppPreferenceNotifier>().setThemeMode(ThemeMode.dark);
           case 2:
-            AppPreference.instance.setThemeMode(ThemeMode.system);
+            context
+                .read<AppPreferenceNotifier>()
+                .setThemeMode(ThemeMode.system);
         }
       },
       children: const [

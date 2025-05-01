@@ -2,13 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
-/// A singleton class that provides key-value storage using Hive.
-class KeyValueStorage {
-  KeyValueStorage._singleton();
-
-  /// Singleton instance of [KeyValueStorage].
-  static final KeyValueStorage instance = KeyValueStorage._singleton();
-
+/// A class that provides key-value storage.
+class KeyValueLocalStorage {
   static const _boxName = 'box';
   late final Box<dynamic> _box;
 
@@ -30,8 +25,8 @@ class KeyValueStorage {
   }
 
   /// Retrieves the data associated with the given [key].
-  T? get<T>(String key) {
-    return _box.get(key) as T?;
+  T? get<T>(String key, {T? defaultValue}) {
+    return _box.get(key, defaultValue: defaultValue) as T?;
   }
 
   /// Remove the data associated with the given [key].

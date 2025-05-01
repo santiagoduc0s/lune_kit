@@ -42,11 +42,6 @@ class UserExample extends User {
 /// A singleton session manager for any kind of User, create your
 /// own class adding the [SessionMixin]
 class UserSessionExample with SessionMixin<UserExample> {
-  UserSessionExample._singleton();
-
-  /// Singleton instance of [UserSessionExample]
-  static final instance = UserSessionExample._singleton();
-
   /// Singleton instance of the session
   final notifier = DataNotifier<UserExample?>();
 

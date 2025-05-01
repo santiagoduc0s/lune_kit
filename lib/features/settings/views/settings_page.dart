@@ -1,6 +1,8 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:lune/extensions/extensions.dart';
+import 'package:lune/features/app_preference/ui/widgets/toggle_button_theme.dart';
+import 'package:lune/features/app_preference/ui/widgets/toggle_text_scale.dart';
 import 'package:lune/features/privacy_policy/views/privacy_policy_screen.dart';
 import 'package:lune/features/settings/widgets/widgets.dart';
 import 'package:lune/features/terms_conditions/views/views.dart';
@@ -14,7 +16,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    final buttonStyles = Theme.of(context).buttonStyles;
+    final buttonStyles = context.buttonStyles;
 
     return Scaffold(
       appBar: AppBar(

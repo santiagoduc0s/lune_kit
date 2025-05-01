@@ -1,12 +1,14 @@
 import 'dart:async';
+
 import 'package:core/core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:logger/logger.dart';
-import 'package:lune/helpers/helpers.dart';
+import 'package:lune/core/utils/utils.dart';
+import 'package:lune/features/app_preference/app_preference.dart';
 
-void setupDependencies() {
-  Injector.register<Logger>(Logger());
+Future<void> injectModules() async {
+  await utilsInjections();
+  await appPreferenceInjections();
 }
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
@@ -14,13 +16,9 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     widgetsBinding: WidgetsFlutterBinding.ensureInitialized(),
   );
 
-  setupDependencies();
+  await injectModules();
 
-  Injector.get<Logger>().d(Env.environment);
-
-  await KeyValueStorage.instance.initialize();
-
-  AppPreference.instance.initialize();
+  AppLogger.instance.debug(Env.environment);
 
   /// Expand the time of the native splash screen
   await Future.delayed(const Duration(milliseconds: 1000), () {});

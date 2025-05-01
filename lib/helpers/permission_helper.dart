@@ -1,9 +1,9 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lune/core/utils/utils.dart';
 import 'package:lune/extensions/extensions.dart';
 import 'package:lune/helpers/helpers.dart';
-import 'package:lune/utils/utils.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionHelper {
@@ -54,15 +54,16 @@ class PermissionHelper {
     String? message,
     String? openButtonText,
   }) async {
-    final l10n = Localization.instance.tr;
+    final localization = Injector.findSingleton<Localization>();
+    final l10n = localization.tr;
 
-    final context = AppKeys.instance.getRootContext()!;
+    final context = AppGlobalKey.getRootContext()!;
 
     if (!context.mounted) {
       throw Exception('Context is not mounted');
     }
 
-    final buttonsProvider = Theme.of(context).buttonStyles;
+    final buttonsProvider = context.buttonStyles;
 
     return CustomDialog.instance.confirm(
       title: title != null ? Text(title) : null,
@@ -78,7 +79,7 @@ class PermissionHelper {
           onPressed: () {
             context.pop(true);
           },
-          child: Text(openButtonText ?? Localization.instance.tr.open),
+          child: Text(openButtonText ?? l10n.open),
         ),
       ],
     );

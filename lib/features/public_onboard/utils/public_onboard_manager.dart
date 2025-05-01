@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:lune/core/utils/utils.dart';
 
 enum PublicOnboardStatus {
   /// The user has seen the public onboard
@@ -32,7 +33,8 @@ class PublicOnboardManager {
   static const String _showPublicManager = 'publicOnboardStatus';
 
   static PublicOnboardStatus getPublicOnboardStatus() {
-    final publicOnboardStatusRaw = KeyValueStorage.instance.get<String>(
+    final keyValueLocalStorage = Injector.findSingleton<KeyValueLocalStorage>();
+    final publicOnboardStatusRaw = keyValueLocalStorage.get<String>(
       _showPublicManager,
     );
 
@@ -42,7 +44,7 @@ class PublicOnboardManager {
   }
 
   static void setPublicOnboardStatus(PublicOnboardStatus status) {
-    KeyValueStorage.instance.save(
+    Injector.findSingleton<KeyValueLocalStorage>().save(
       _showPublicManager,
       status.value,
     );

@@ -1,3 +1,4 @@
+export 'app_preference/app_preference.dart';
 export 'home/home.dart';
 export 'privacy_policy/privacy_policy.dart';
 export 'public_onboard/public_onboard.dart';

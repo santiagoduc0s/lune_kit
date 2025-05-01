@@ -12,7 +12,7 @@ class PublicOnboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colors;
+    final colors = context.colors;
 
     var bottomPadding = MediaQuery.of(context).padding.bottom;
     if (bottomPadding == 0) {

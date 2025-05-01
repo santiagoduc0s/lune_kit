@@ -32,7 +32,7 @@ class _TermsConditionsPageState extends State<TermsConditionsPage> {
 
   @override
   Widget build(BuildContext context) {
-    final textStyles = Theme.of(context).textStyles;
+    final textStyles = context.textStyles;
 
     final l10n = context.l10n;
 

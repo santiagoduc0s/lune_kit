@@ -18,14 +18,14 @@ class CustomSnackbar {
   ) {
     hideSnackBar();
 
-    final currentState = AppKeys.instance.scaffoldMessengerKey.currentState;
+    final currentState = AppGlobalKey.scaffoldMessengerKey.currentState;
 
     return currentState!.showSnackBar(snackBar);
   }
 
   /// Hides the currently displayed snackbar.
   void hideSnackBar() {
-    final currentState = AppKeys.instance.scaffoldMessengerKey.currentState;
+    final currentState = AppGlobalKey.scaffoldMessengerKey.currentState;
 
     if (currentState == null) return;
 
@@ -50,11 +50,11 @@ class CustomSnackbar {
     BorderRadius? borderRadius,
     void Function()? onTap,
   }) {
-    final context = AppKeys.instance.getRootContext();
+    final context = AppGlobalKey.getRootContext();
 
     if (context == null) return;
 
-    final colorsProvider = Theme.of(context).colors;
+    final colorsProvider = context.colors;
 
     show(
       showIcon: showIcon,
@@ -93,11 +93,11 @@ class CustomSnackbar {
     BorderRadius? borderRadius,
     void Function()? onTap,
   }) {
-    final context = AppKeys.instance.getRootContext();
+    final context = AppGlobalKey.getRootContext();
 
     if (context == null) return;
 
-    final colorsProvider = Theme.of(context).colors;
+    final colorsProvider = context.colors;
 
     show(
       showIcon: showIcon,
@@ -136,7 +136,7 @@ class CustomSnackbar {
     BorderRadius? borderRadius,
     void Function()? onTap,
   }) {
-    final context = AppKeys.instance.getRootContext();
+    final context = AppGlobalKey.getRootContext();
 
     if (context == null) return;
 
@@ -146,8 +146,8 @@ class CustomSnackbar {
 
     isSnackbarActive = true;
 
-    final colorsProvider = Theme.of(context).colors;
-    final textStylesProvider = Theme.of(context).textStyles;
+    final colorsProvider = context.colors;
+    final textStylesProvider = context.textStyles;
 
     final bgColor = backgroundColor ?? colorsProvider.primary;
 

@@ -108,7 +108,7 @@ class _LoadingButtonState extends State<LoadingButton> {
 
   @override
   Widget build(BuildContext context) {
-    final colorsProvider = Theme.of(context).colors;
+    final colorsProvider = context.colors;
 
     final childWidget = SizedBox(
       key: _childHeight == 0 ? _childKey : UniqueKey(),

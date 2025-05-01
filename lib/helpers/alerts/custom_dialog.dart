@@ -56,7 +56,7 @@ class CustomDialog {
   }) {
     return showDialog<T>(
       barrierDismissible: barrierDismissible,
-      context: buildContext ?? AppKeys.instance.getRootContext()!,
+      context: buildContext ?? AppGlobalKey.getRootContext()!,
       builder: (BuildContext context) {
         return AlertDialog(
           titlePadding: title != null

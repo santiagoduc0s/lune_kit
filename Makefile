@@ -3,6 +3,9 @@ lint:
 	dart format .
 	flutter analyze
 
+runner:
+	dart run build_runner build
+
 dev:
 	cp -f environments/dev/env.json env.json
 

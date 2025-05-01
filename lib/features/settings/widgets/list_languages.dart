@@ -2,9 +2,11 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lune/extensions/extensions.dart';
+import 'package:lune/features/app_preference/ui/notifier/notifier.dart';
 import 'package:lune/helpers/modals/modals.dart';
 import 'package:lune/l10n/l10n.dart';
 import 'package:lune/ui/widgets/widgets.dart';
+import 'package:provider/provider.dart';
 
 class ListLanguages extends StatelessWidget {
   const ListLanguages({super.key});
@@ -13,14 +15,14 @@ class ListLanguages extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    final colors = Theme.of(context).colors;
+    final colors = context.colors;
 
-    final textStyles = Theme.of(context).textStyles;
+    final textStyles = context.textStyles;
 
-    final buttonStyles = Theme.of(context).buttonStyles;
+    final buttonStyles = context.buttonStyles;
 
     final paddingBottom =
-        MediaQuery.of(AppKeys.instance.getRootContext()!).padding.bottom;
+        MediaQuery.of(AppGlobalKey.getRootContext()!).padding.bottom;
 
     return SizedBox(
       child: LoadingButton(
@@ -77,10 +79,19 @@ class ListLanguages extends StatelessWidget {
 
           if (locale == null) return;
 
+          final currentContext = context;
           if (locale == const Locale('system')) {
-            AppPreference.instance.setLocale(null);
+            if (currentContext.mounted) {
+              await currentContext
+                  .read<AppPreferenceNotifier>()
+                  .setLocale(null);
+            }
           } else {
-            AppPreference.instance.setLocale(locale);
+            if (currentContext.mounted) {
+              await currentContext
+                  .read<AppPreferenceNotifier>()
+                  .setLocale(locale);
+            }
           }
         },
         style: buttonStyles.primaryFilled,
