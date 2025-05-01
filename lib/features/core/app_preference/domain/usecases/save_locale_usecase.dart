@@ -1,14 +1,6 @@
 import 'package:lune/features/core/app_preference/domain/entities/entities.dart';
 import 'package:lune/features/core/app_preference/domain/repositories/repositories.dart';
 
-class SaveLocaleParams {
-  const SaveLocaleParams({
-    required this.locale,
-  });
-
-  final String? locale;
-}
-
 class SaveLocaleUseCase {
   SaveLocaleUseCase({
     required this.appPreferenceRepository,
@@ -16,8 +8,8 @@ class SaveLocaleUseCase {
 
   final AppPreferenceRepository appPreferenceRepository;
 
-  Future<AppPreferenceEntity> call(SaveLocaleParams params) async {
-    await appPreferenceRepository.saveLocale(params.locale);
+  Future<AppPreferenceEntity> call(String? locale) async {
+    await appPreferenceRepository.saveLocale(locale);
     return appPreferenceRepository.loadAppPreference();
   }
 }

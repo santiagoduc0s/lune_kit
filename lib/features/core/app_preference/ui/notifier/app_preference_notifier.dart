@@ -36,9 +36,7 @@ class AppPreferenceNotifier extends ChangeNotifier {
   }
 
   Future<void> setTextScaler(double scaler) async {
-    await saveTextScalerUseCase.call(
-      SaveTextScalerParams(textScaler: scaler),
-    );
+    await saveTextScalerUseCase.call(scaler);
 
     prefs = prefs.copyWith(textScaler: TextScaler.linear(scaler));
 
@@ -46,13 +44,7 @@ class AppPreferenceNotifier extends ChangeNotifier {
   }
 
   Future<void> setLocale(Locale? newLocale) async {
-    await saveLocaleUseCase.call(
-      SaveLocaleParams(locale: newLocale?.toLanguageTag()),
-    );
-
-    prefs = await saveLocaleUseCase.call(
-      SaveLocaleParams(locale: newLocale?.toLanguageTag()),
-    );
+    prefs = await saveLocaleUseCase.call(newLocale?.toLanguageTag());
 
     notifyListeners();
   }

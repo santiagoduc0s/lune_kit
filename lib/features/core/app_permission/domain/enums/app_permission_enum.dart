@@ -1,0 +1,18 @@
+enum AppPermissionEnum {
+  camera,
+  location,
+  microphone,
+  notification,
+  phone,
+  storage,
+  calendar,
+  contacts,
+  sms,
+  bodySensors,
+  activityRecognition,
+  allFilesAccess,
+  bluetoothScan,
+  bluetoothConnect,
+  nearbyDevices,
+  postNotifications,
+}

@@ -16,18 +16,16 @@ class SaveTextScalerUseCase {
 
   final AppPreferenceRepository appPreferenceRepository;
 
-  Future<AppPreferenceEntity> call(SaveTextScalerParams params) async {
-    final scaler = params.textScaler;
-
-    if (scaler < 1 || scaler > 3) {
+  Future<AppPreferenceEntity> call(double textScaler) async {
+    if (textScaler < 1 || textScaler > 3) {
       throw ArgumentError.value(
-        scaler,
+        textScaler,
         'textScaler',
         'Must be between 1 and 3',
       );
     }
 
-    await appPreferenceRepository.saveTextScaler(scaler);
+    await appPreferenceRepository.saveTextScaler(textScaler);
     return appPreferenceRepository.loadAppPreference();
   }
 }

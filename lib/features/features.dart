@@ -1,6 +1,5 @@
 export 'core/core.dart';
 export 'home/home.dart';
-export 'permission/permission.dart';
 export 'privacy_policy/privacy_policy.dart';
 export 'public_onboard/public_onboard.dart';
 export 'settings/settings.dart';
