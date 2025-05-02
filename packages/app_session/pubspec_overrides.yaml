@@ -1,6 +1,0 @@
-# melos_managed_dependency_overrides: core,http_client
-dependency_overrides:
-  core:
-    path: ../core
-  http_client:
-    path: ../http_client
