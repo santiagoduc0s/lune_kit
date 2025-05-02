@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lune/core/ui/animations/animations.dart';
 import 'package:lune/core/ui/widgets/app_wrapper.dart';
-import 'package:lune/features/home/views/views.dart';
-import 'package:lune/features/privacy_policy/views/views.dart';
-import 'package:lune/features/settings/views/views.dart';
-import 'package:lune/features/splash/views/views.dart';
-import 'package:lune/features/terms_conditions/views/views.dart';
+import 'package:lune/features/pages/home/views/views.dart';
+import 'package:lune/features/pages/privacy_policy/views/views.dart';
+import 'package:lune/features/pages/settings/views/views.dart';
+import 'package:lune/features/pages/splash/views/views.dart';
+import 'package:lune/features/pages/terms_conditions/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
 
 class AppRouter {

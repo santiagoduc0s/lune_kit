@@ -1,10 +1,10 @@
 import 'package:go_router/go_router.dart';
-import 'package:lune/features/terms_conditions/views/views.dart';
+import 'package:lune/features/pages/privacy_policy/views/views.dart';
 
-class TermsConditionsScreen {
-  const TermsConditionsScreen();
+class PrivacyPolicyScreen {
+  const PrivacyPolicyScreen();
 
-  static const path = '/terms-conditions';
+  static const path = '/privacy-policy';
 
   static GoRoute route({
     List<RouteBase> routes = const [],
@@ -13,7 +13,7 @@ class TermsConditionsScreen {
         path: path,
         name: path,
         builder: (context, state) {
-          return const TermsConditionsPage();
+          return const PrivacyPolicyPage();
         },
         routes: routes,
       );

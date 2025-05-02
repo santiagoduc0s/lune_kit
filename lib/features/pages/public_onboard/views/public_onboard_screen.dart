@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lune/core/ui/animations/route_animation.dart';
-import 'package:lune/features/public_onboard/public_onboard.dart';
+import 'package:lune/features/pages/public_onboard/public_onboard.dart';
 
 class PublicOnboardScreen {
   const PublicOnboardScreen();

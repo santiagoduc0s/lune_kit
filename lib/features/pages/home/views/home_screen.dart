@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lune/features/settings/bloc/bloc.dart';
-import 'package:lune/features/settings/views/views.dart';
+import 'package:lune/features/pages/home/bloc/bloc.dart';
+import 'package:lune/features/pages/home/views/views.dart';
 
-class SettingsScreen {
-  const SettingsScreen();
+class HomeScreen {
+  const HomeScreen();
 
-  static const path = '/settings';
+  static const path = '/home';
 
   static GoRoute route({
     List<RouteBase> routes = const [],
@@ -16,8 +16,8 @@ class SettingsScreen {
         name: path,
         builder: (context, state) {
           return BlocProvider(
-            create: (context) => SettingsBloc(),
-            child: const SettingsPage(),
+            create: (context) => HomeBloc(),
+            child: const HomePage(),
           );
         },
         routes: routes,

@@ -4,9 +4,9 @@ import 'package:lune/config/router/router.dart';
 import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/features/core/app_preference/ui/widgets/toggle_button_theme.dart';
 import 'package:lune/features/core/app_preference/ui/widgets/toggle_text_scale.dart';
-import 'package:lune/features/privacy_policy/views/privacy_policy_screen.dart';
-import 'package:lune/features/settings/widgets/widgets.dart';
-import 'package:lune/features/terms_conditions/views/views.dart';
+import 'package:lune/features/pages/privacy_policy/views/privacy_policy_screen.dart';
+import 'package:lune/features/pages/settings/widgets/widgets.dart';
+import 'package:lune/features/pages/terms_conditions/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
 
 class SettingsPage extends StatelessWidget {
