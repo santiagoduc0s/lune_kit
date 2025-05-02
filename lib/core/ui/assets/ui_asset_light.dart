@@ -1,5 +1,5 @@
+import 'package:lune/core/ui/assets/assets.dart';
 import 'package:lune/gen/assets.gen.dart';
-import 'package:lune/ui/assets/assets.dart';
 
 /// The light theme implementation of [UIAsset].
 class UIAssetLight implements UIAsset {

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lune/core/animations/animations.dart';
+import 'package:lune/core/ui/animations/animations.dart';
 import 'package:lune/features/splash/bloc/bloc.dart';
 import 'package:lune/features/splash/views/views.dart';
 

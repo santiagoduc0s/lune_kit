@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:lune/extensions/extensions.dart';
+import 'package:lune/core/extensions/extensions.dart';
 
 class Snackbars {
   static SnackBar primary(

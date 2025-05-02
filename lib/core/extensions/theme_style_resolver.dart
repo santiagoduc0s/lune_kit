@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:lune/ui/ui.dart';
+import 'package:lune/core/ui/assets/assets.dart';
+import 'package:lune/core/ui/icons/icons.dart';
 
 /// Extension on [ThemeData] to provide access to UI based on the current theme.
 extension ThemeStyleResolver on BuildContext {

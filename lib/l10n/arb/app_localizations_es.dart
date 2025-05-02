@@ -239,8 +239,7 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get forgotPassword_emailSent =>
-      'Se envió un correo para restablecer la contraseña';
+  String get forgotPassword_emailSent => 'Se envió un correo para restablecer la contraseña';
 
   @override
   String get forgotPassword_title => 'Recuperar contraseña';
@@ -249,8 +248,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get profile_userUpdated => 'Perfil actualizado con éxito';
 
   @override
-  String get profile_messageActivePermission =>
-      'Necesitamos tu permiso para usar la cámara';
+  String get profile_messageActivePermission => 'Necesitamos tu permiso para usar la cámara';
 
   @override
   String get profile_imageUpdated => 'Imagen actualizada con éxito';
@@ -259,8 +257,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get profile_imageDeleted => 'Imagen eliminada con éxito';
 
   @override
-  String get signIn_emailDoesNotVerified =>
-      'Por favor, valida tu correo para continuar';
+  String get signIn_emailDoesNotVerified => 'Por favor, valida tu correo para continuar';
 
   @override
   String get signIn_invalidCredential => 'Verifica tus credenciales';
@@ -272,8 +269,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get signIn_userDisabled => 'Usuario deshabilitado';
 
   @override
-  String get signIn_emailValidationSent =>
-      'Hemos enviado un correo para validar tu cuenta';
+  String get signIn_emailValidationSent => 'Hemos enviado un correo para validar tu cuenta';
 
   @override
   String get signUp_emailAlreadyInUse => 'El correo ya está en uso';
@@ -297,12 +293,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get lock_message => 'Autentícate para desbloquear la app';
 
   @override
-  String get settings_titleConfirmDeleteAccount =>
-      'Esta acción es irreversible';
+  String get settings_titleConfirmDeleteAccount => 'Esta acción es irreversible';
 
   @override
-  String get settings_messageConfirmDeleteAccount =>
-      'Antes de eliminar tu cuenta, debes reautenticarte';
+  String get settings_messageConfirmDeleteAccount => 'Antes de eliminar tu cuenta, debes reautenticarte';
 
   @override
   String get settings_language => 'Idioma';
@@ -326,23 +320,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get settings_checkPassword => 'Verifica la contraseña actual';
 
   @override
-  String get validation_any =>
-      'Al menos uno de los campos obligatorios debe estar lleno.';
+  String get validation_any => 'Al menos uno de los campos obligatorios debe estar lleno.';
 
   @override
   String get validation_compare => 'Los campos deben coincidir.';
 
   @override
-  String get validation_contains =>
-      'La entrada debe contener el valor requerido.';
+  String get validation_contains => 'La entrada debe contener el valor requerido.';
 
   @override
-  String get validation_creditCard =>
-      'Por favor, introduce un número de tarjeta de crédito válido.';
+  String get validation_creditCard => 'Por favor, introduce un número de tarjeta de crédito válido.';
 
   @override
-  String get validation_email =>
-      'Por favor, introduce una dirección de correo electrónico válida.';
+  String get validation_email => 'Por favor, introduce una dirección de correo electrónico válida.';
 
   @override
   String get validation_equals => 'Los valores no coinciden.';
@@ -374,8 +364,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get validation_number => 'Por favor, introduce un número válido.';
 
   @override
-  String get validation_pattern =>
-      'La entrada no coincide con el patrón requerido.';
+  String get validation_pattern => 'La entrada no coincide con el patrón requerido.';
 
   @override
   String get validation_required => 'Este campo es obligatorio.';
@@ -384,34 +373,28 @@ class AppLocalizationsEs extends AppLocalizations {
   String get validation_requiredTrue => 'Este campo debe ser seleccionado.';
 
   @override
-  String get exception_credentialAlreadyExists =>
-      'Ya existe una cuenta con este correo';
+  String get exception_credentialAlreadyExists => 'Ya existe una cuenta con este correo';
 
   @override
   String get biometricSwitcher_activate => 'Activar biométrico';
 
   @override
-  String get biometricSwitcher_activateConfirmation =>
-      '¿Deseas activar la biométrico?';
+  String get biometricSwitcher_activateConfirmation => '¿Deseas activar la biométrico?';
 
   @override
   String get biometricSwitcher_deactivate => 'Desactivar biométrico';
 
   @override
-  String get biometricSwitcher_deactivateConfirmation =>
-      '¿Deseas desactivar la biométrico?';
+  String get biometricSwitcher_deactivateConfirmation => '¿Deseas desactivar la biométrico?';
 
   @override
-  String get biometricSwitcher_activateAuthReason =>
-      'Autentícate para activar la biométrico';
+  String get biometricSwitcher_activateAuthReason => 'Autentícate para activar la biométrico';
 
   @override
-  String get biometricSwitcher_deactivateAuthReason =>
-      'Autentícate para desactivar la biométrico';
+  String get biometricSwitcher_deactivateAuthReason => 'Autentícate para desactivar la biométrico';
 
   @override
-  String get biometricSwitcher_notSupported =>
-      'Tu dispositivo no admite biométrico';
+  String get biometricSwitcher_notSupported => 'Tu dispositivo no admite biométrico';
 
   @override
   String get biometricSwitcher_every15Seconds => 'Cada 15 segundos';

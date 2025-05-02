@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lune/extensions/extensions.dart';
+import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/features/public_onboard/public_onboard.dart';
 import 'package:lune/l10n/l10n.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';

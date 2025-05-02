@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lune/config/router/app_router.dart';
 import 'package:lune/features/home/home.dart';
 import 'package:lune/features/splash/bloc/bloc.dart';
-import 'package:lune/router/app_router.dart';
 
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
   SplashBloc() : super(const SplashState.initial()) {

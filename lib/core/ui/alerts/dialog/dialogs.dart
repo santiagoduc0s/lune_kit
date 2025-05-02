@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lune/extensions/extensions.dart';
+import 'package:lune/core/extensions/extensions.dart';
 
 abstract class Dialogs {
   static AlertDialog confirm(

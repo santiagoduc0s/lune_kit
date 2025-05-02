@@ -1,8 +1,8 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/config/router/app_router.dart';
 import 'package:lune/features/core/app_preference/ui/notifier/notifier.dart';
 import 'package:lune/l10n/arb/app_localizations.dart';
-import 'package:lune/router/app_router.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {

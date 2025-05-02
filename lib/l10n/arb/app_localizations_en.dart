@@ -248,8 +248,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profile_userUpdated => 'Profile updated successfully';
 
   @override
-  String get profile_messageActivePermission =>
-      'We need your permission to use the camera';
+  String get profile_messageActivePermission => 'We need your permission to use the camera';
 
   @override
   String get profile_imageUpdated => 'Image updated successfully';
@@ -258,8 +257,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profile_imageDeleted => 'Image deleted successfully';
 
   @override
-  String get signIn_emailDoesNotVerified =>
-      'Please validate your email to continue';
+  String get signIn_emailDoesNotVerified => 'Please validate your email to continue';
 
   @override
   String get signIn_invalidCredential => 'Check your credentials';
@@ -271,8 +269,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signIn_userDisabled => 'User disabled';
 
   @override
-  String get signIn_emailValidationSent =>
-      'We sent you an email to verify your account';
+  String get signIn_emailValidationSent => 'We sent you an email to verify your account';
 
   @override
   String get signUp_emailAlreadyInUse => 'The email is already in use';
@@ -296,12 +293,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lock_message => 'Authenticate to unlock the app';
 
   @override
-  String get settings_titleConfirmDeleteAccount =>
-      'This action is irreversible';
+  String get settings_titleConfirmDeleteAccount => 'This action is irreversible';
 
   @override
-  String get settings_messageConfirmDeleteAccount =>
-      'Before deleting your account, you must reauthenticate';
+  String get settings_messageConfirmDeleteAccount => 'Before deleting your account, you must reauthenticate';
 
   @override
   String get settings_language => 'Language';
@@ -325,19 +320,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings_checkPassword => 'Check the current password';
 
   @override
-  String get validation_any =>
-      'At least one of the required fields must be filled.';
+  String get validation_any => 'At least one of the required fields must be filled.';
 
   @override
   String get validation_compare => 'The fields must match.';
 
   @override
-  String get validation_contains =>
-      'The input must contain the required value.';
+  String get validation_contains => 'The input must contain the required value.';
 
   @override
-  String get validation_creditCard =>
-      'Please enter a valid credit card number.';
+  String get validation_creditCard => 'Please enter a valid credit card number.';
 
   @override
   String get validation_email => 'Please enter a valid email address.';
@@ -372,8 +364,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get validation_number => 'Please enter a valid number.';
 
   @override
-  String get validation_pattern =>
-      'The input does not match the required pattern.';
+  String get validation_pattern => 'The input does not match the required pattern.';
 
   @override
   String get validation_required => 'This field is required.';
@@ -382,34 +373,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get validation_requiredTrue => 'This field must be selected.';
 
   @override
-  String get exception_credentialAlreadyExists =>
-      'Already exists an account with this email';
+  String get exception_credentialAlreadyExists => 'Already exists an account with this email';
 
   @override
   String get biometricSwitcher_activate => 'Active Biometric';
 
   @override
-  String get biometricSwitcher_activateConfirmation =>
-      'Do you want to activate biometric?';
+  String get biometricSwitcher_activateConfirmation => 'Do you want to activate biometric?';
 
   @override
   String get biometricSwitcher_deactivate => 'Deactivate Biometric';
 
   @override
-  String get biometricSwitcher_deactivateConfirmation =>
-      'Do you want to deactivate biometric?';
+  String get biometricSwitcher_deactivateConfirmation => 'Do you want to deactivate biometric?';
 
   @override
-  String get biometricSwitcher_activateAuthReason =>
-      'Authenticate to active the biometric';
+  String get biometricSwitcher_activateAuthReason => 'Authenticate to active the biometric';
 
   @override
-  String get biometricSwitcher_deactivateAuthReason =>
-      'Authenticate to deactivate the biometric';
+  String get biometricSwitcher_deactivateAuthReason => 'Authenticate to deactivate the biometric';
 
   @override
-  String get biometricSwitcher_notSupported =>
-      'Your device does not support biometric';
+  String get biometricSwitcher_notSupported => 'Your device does not support biometric';
 
   @override
   String get biometricSwitcher_every15Seconds => 'Every 15 seconds';

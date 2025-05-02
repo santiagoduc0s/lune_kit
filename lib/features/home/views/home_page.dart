@@ -1,7 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/core/ui/ui.dart';
-import 'package:lune/extensions/extensions.dart';
 import 'package:lune/l10n/l10n.dart';
 
 class HomePage extends StatelessWidget {

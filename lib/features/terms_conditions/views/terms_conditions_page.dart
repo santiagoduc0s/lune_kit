@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:lune/extensions/extensions.dart';
+import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/gen/assets.gen.dart';
 import 'package:lune/l10n/l10n.dart';
 import 'package:url_launcher/url_launcher_string.dart';
