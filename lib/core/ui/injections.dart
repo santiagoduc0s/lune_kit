@@ -1,5 +1,5 @@
-import 'package:core/core.dart';
 import 'package:lune/core/ui/alerts/alerts.dart';
+import 'package:lune/core/utils/utils.dart';
 
 void uiInjections() {
   /// ALERT

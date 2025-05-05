@@ -1,8 +1,8 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lune/core/ui/assets/assets.dart';
 import 'package:lune/core/ui/icons/icons.dart';
+import 'package:lune/core/ui/spacing/spacing.dart';
 
 /// The dark theme implementation of [UIIcon].
 class UIIconDark extends UIIcon {

@@ -1,6 +1,4 @@
-import 'package:core/core.dart';
-import 'package:lune/core/utils/key_value_local_storage.dart';
-import 'package:lune/core/utils/localization.dart';
+import 'package:lune/core/utils/utils.dart';
 
 Future<void> utilsInjections() async {
   Injector.registerSingleton(

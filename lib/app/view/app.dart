@@ -1,6 +1,7 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:lune/config/router/app_router.dart';
+import 'package:lune/core/ui/themes/themes.dart';
+import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/app_preference/ui/notifier/notifier.dart';
 import 'package:lune/l10n/arb/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +41,7 @@ class AppContent extends StatelessWidget {
       themeMode: appPreference.themeMode,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      routerConfig: AppRouter.instance.router,
+      routerConfig: Injector.findSingleton<AppRouter>().router,
       locale: appPreference.locale,
       builder: (context, child) {
         return MediaQuery(

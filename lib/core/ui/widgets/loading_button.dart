@@ -1,6 +1,6 @@
-import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:lune/core/extensions/extensions.dart';
+import 'package:lune/core/ui/spacing/spacing.dart';
 
 /// Type of button to be used in [LoadingButton].
 enum ButtonType {
@@ -128,7 +128,7 @@ class _LoadingButtonState extends State<LoadingButton> {
                 child: widget.loader ??
                     FittedBox(
                       child: CircularProgressIndicator(
-                        strokeWidth: widget.strokeWidth ?? .25.space,
+                        strokeWidth: widget.strokeWidth ?? 0.25.space,
                         color: widget.loaderColor ?? colorsProvider.onPrimary,
                       ),
                     ),

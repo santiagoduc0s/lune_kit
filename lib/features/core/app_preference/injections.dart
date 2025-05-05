@@ -1,4 +1,3 @@
-import 'package:core/core.dart';
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/app_preference/data/datasources/datasources.dart';
 import 'package:lune/features/core/app_preference/data/repositories/repositories.dart';
@@ -10,14 +9,14 @@ Future<void> appPreferenceInjections() async {
   /// DATASOURCE
   Injector.registerSingleton<AppPreferenceDatasource>(
     AppPreferenceLocalDatasource(
-      Injector.findSingleton<KeyValueLocalStorage>(),
+      Injector.findSingleton(),
     ),
   );
 
   /// REPOSITORY
   Injector.registerSingleton<AppPreferenceRepository>(
     AppPreferenceRepositoryImpl(
-      Injector.findSingleton<AppPreferenceDatasource>(),
+      Injector.findSingleton(),
     ),
   );
 

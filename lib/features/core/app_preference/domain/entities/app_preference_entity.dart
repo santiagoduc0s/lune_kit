@@ -1,6 +1,6 @@
-import 'package:core/core.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:lune/core/utils/utils.dart';
 
 class AppPreferenceEntity extends Equatable {
   const AppPreferenceEntity({

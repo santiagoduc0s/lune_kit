@@ -1,31 +1,27 @@
 import 'dart:async';
 
-import 'package:core/core.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:lune/config/config.dart';
 import 'package:lune/core/ui/injections.dart';
 import 'package:lune/core/utils/utils.dart';
-import 'package:lune/features/core/app_preference/app_preference.dart';
+import 'package:lune/features/injections.dart';
 
 Future<void> injectModules() async {
+  configInjections();
   await utilsInjections();
-  await appPreferenceInjections();
+  await featureInjections();
   uiInjections();
 }
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
-  FlutterNativeSplash.preserve(
-    widgetsBinding: WidgetsFlutterBinding.ensureInitialized(),
-  );
+  WidgetsFlutterBinding.ensureInitialized();
 
   await injectModules();
 
   AppLogger.instance.debug(Env.environment);
 
-  /// Expand the time of the native splash screen
+  /// Expand the time to show more time the splash screen
   await Future.delayed(const Duration(milliseconds: 1000), () {});
 
   runApp(await builder());
-
-  FlutterNativeSplash.remove();
 }

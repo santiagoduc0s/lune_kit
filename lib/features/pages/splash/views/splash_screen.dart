@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lune/core/ui/animations/animations.dart';
+import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/pages/splash/bloc/bloc.dart';
 import 'package:lune/features/pages/splash/views/views.dart';
 
@@ -20,7 +21,9 @@ class SplashScreen {
             key: state.pageKey,
             child: BlocProvider(
               lazy: false,
-              create: (context) => SplashBloc()..add(SplashInit()),
+              create: (context) => SplashBloc(
+                appRouter: Injector.findSingleton(),
+              )..add(SplashInit()),
               child: const SplashPage(),
             ),
           );
