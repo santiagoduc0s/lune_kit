@@ -1,6 +1,5 @@
 import 'package:lune/features/core/app_preference/data/datasources/datasources.dart';
 import 'package:lune/features/core/app_preference/data/models/models.dart';
-import 'package:lune/features/core/app_preference/domain/entities/entities.dart';
 import 'package:lune/features/core/app_preference/domain/repositories/repositories.dart';
 
 class AppPreferenceRepositoryImpl extends AppPreferenceRepository {
@@ -11,7 +10,7 @@ class AppPreferenceRepositoryImpl extends AppPreferenceRepository {
   AppPreferenceDatasource datasource;
 
   @override
-  Future<AppPreferenceEntity> loadAppPreference() async {
+  Future<AppPreferenceModel> loadAppPreference() async {
     final themeKey = datasource.getThemeModeKey();
     final scaler = datasource.getTextScaler();
     final localeCode = datasource.getLocaleCode();
@@ -20,7 +19,7 @@ class AppPreferenceRepositoryImpl extends AppPreferenceRepository {
       'themeMode': themeKey,
       'textScaler': scaler,
       'locale': localeCode,
-    }).toEntity();
+    });
   }
 
   @override

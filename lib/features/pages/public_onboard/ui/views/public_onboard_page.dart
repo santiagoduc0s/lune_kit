@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/core/ui/spacing/spacing.dart';
+import 'package:lune/features/pages/public_onboard/ui/notifiers/notifiers.dart';
 import 'package:lune/l10n/l10n.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PublicOnboardPage extends StatefulWidget {
@@ -143,8 +145,10 @@ class _PublicOnboardPageState extends State<PublicOnboardPage> {
                     },
                     child: AnimatedSwitcher(
                       duration: const Duration(milliseconds: 200),
-                      transitionBuilder: (child, anim) =>
-                          FadeTransition(opacity: anim, child: child),
+                      transitionBuilder: (child, anim) => FadeTransition(
+                        opacity: anim,
+                        child: child,
+                      ),
                       child: Text(
                         isLast ? l10n.done : l10n.next,
                         key: ValueKey(isLast ? 'done' : 'next'),
@@ -161,7 +165,9 @@ class _PublicOnboardPageState extends State<PublicOnboardPage> {
     );
   }
 
-  void _finishOnboard(BuildContext context) {}
+  void _finishOnboard(BuildContext context) {
+    context.read<PublicOnboardNotifier>().finishOnboard();
+  }
 }
 
 class SinglePageOnboard extends StatelessWidget {

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lune/config/config.dart';
 import 'package:lune/core/ui/alerts/snackbar/snackbar.dart';
 import 'package:lune/core/utils/utils.dart';
-import 'package:lune/features/pages/home/ui/pages/views.dart';
+import 'package:lune/features/pages/home/ui/views/views.dart';
+import 'package:lune/features/pages/public_onboard/domain/entities/entities.dart';
 import 'package:lune/features/pages/public_onboard/domain/enums/enums.dart';
 import 'package:lune/features/pages/public_onboard/domain/usecases/usecases.dart';
 
@@ -27,7 +28,7 @@ class PublicOnboardNotifier extends ChangeNotifier {
   bool isLoading = false;
 
   Future<void> initialize() async {
-    status = await getStatusUseCase.call();
+    status = (await getStatusUseCase.call()).status;
   }
 
   void _setLoading(bool value) {
@@ -39,8 +40,11 @@ class PublicOnboardNotifier extends ChangeNotifier {
     _setLoading(true);
 
     try {
-      status = PublicOnboardStatusEnum.seen;
-      await setStatusUseCase.call(status);
+      await setStatusUseCase.call(
+        PublicOnboardStatusEntity(
+          status: PublicOnboardStatusEnum.seen,
+        ),
+      );
       router.goNamed(HomeScreen.path);
     } catch (e) {
       snackbar.show(

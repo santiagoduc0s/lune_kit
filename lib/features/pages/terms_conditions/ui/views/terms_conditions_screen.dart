@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:lune/features/pages/terms_conditions/views/views.dart';
+import 'package:lune/features/pages/terms_conditions/ui/views/views.dart';
 
 class TermsConditionsScreen {
   const TermsConditionsScreen();

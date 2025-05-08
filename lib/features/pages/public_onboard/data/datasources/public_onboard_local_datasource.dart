@@ -21,10 +21,10 @@ class PublicOnboardLocalDatasource extends PublicOnboardDatasource {
   }
 
   @override
-  Future<void> setStatus(PublicOnboardStatusModel value) {
+  Future<void> setStatus(PublicOnboardStatusModel status) {
     return storage.save(
       _showPublicManager,
-      value.value,
+      status.toJson(),
     );
   }
 }

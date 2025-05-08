@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:lune/features/pages/home/ui/pages/views.dart';
+import 'package:lune/features/pages/home/ui/views/views.dart';
 
 class HomeScreen {
   const HomeScreen();

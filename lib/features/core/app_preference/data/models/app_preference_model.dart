@@ -1,39 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:lune/features/core/app_preference/domain/entities/entities.dart';
 
-class AppPreferenceModel {
-  AppPreferenceModel({
-    required this.themeMode,
-    required this.textScaler,
-    this.locale,
+class AppPreferenceModel extends AppPreferenceEntity {
+  const AppPreferenceModel({
+    required super.themeMode,
+    required super.textScaler,
+    super.locale,
   });
 
   factory AppPreferenceModel.fromJson(Map<String, dynamic> json) {
+    final mode = _themeModeFromString(json['themeMode'] as String?);
+    final scale = (json['textScaler'] as num?)?.toDouble() ?? 1.0;
+    final localeTag = json['locale'] as String?;
+
     return AppPreferenceModel(
-      themeMode: json['themeMode'] as String? ?? 'system',
-      textScaler: json['textScaler'] as double? ?? 1.0,
-      locale: json['locale'] as String?,
+      themeMode: mode,
+      textScaler: TextScaler.linear(scale),
+      locale: localeTag != null ? Locale(localeTag) : null,
     );
   }
 
-  /// 'system', 'light', 'dark'
-  final String themeMode;
-
-  /// 1.0, 1.5, 2.0
-  final double textScaler;
-
-  /// 'en', 'fr', 'es_ES'
-  final String? locale;
-
-  AppPreferenceEntity toEntity() {
-    return AppPreferenceEntity(
-      themeMode: _themeModeFromString(themeMode),
-      textScaler: TextScaler.linear(textScaler),
-      locale: locale != null ? Locale(locale!) : null,
-    );
+  Map<String, dynamic> toJson() {
+    return {
+      'themeMode': _stringFromThemeMode(themeMode),
+      'textScaler': textScaler.scale,
+      'locale': locale?.toLanguageTag(),
+    };
   }
 
-  ThemeMode _themeModeFromString(String? value) {
+  static ThemeMode _themeModeFromString(String? value) {
     switch (value) {
       case 'light':
         return ThemeMode.light;
@@ -41,6 +36,17 @@ class AppPreferenceModel {
         return ThemeMode.dark;
       default:
         return ThemeMode.system;
+    }
+  }
+
+  static String _stringFromThemeMode(ThemeMode mode) {
+    switch (mode) {
+      case ThemeMode.light:
+        return 'light';
+      case ThemeMode.dark:
+        return 'dark';
+      case ThemeMode.system:
+        return 'system';
     }
   }
 }

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lune/core/ui/animations/animations.dart';
-import 'package:lune/core/ui/widgets/app_wrapper.dart';
+import 'package:lune/core/ui/widgets/widgets.dart';
 import 'package:lune/core/utils/utils.dart';
-import 'package:lune/features/pages/home/ui/pages/views.dart';
+import 'package:lune/features/pages/home/ui/views/views.dart';
 import 'package:lune/features/pages/privacy_policy/ui/views/views.dart';
+import 'package:lune/features/pages/public_onboard/ui/views/views.dart';
 import 'package:lune/features/pages/settings/ui/views/views.dart';
-import 'package:lune/features/pages/splash/views/views.dart';
-import 'package:lune/features/pages/terms_conditions/views/views.dart';
+import 'package:lune/features/pages/splash/ui/views/views.dart';
+import 'package:lune/features/pages/terms_conditions/ui/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
 
 class AppRouter {
@@ -62,6 +63,7 @@ class AppRouter {
           );
         },
         routes: [
+          PublicOnboardScreen.route(),
           StatefulShellRoute.indexedStack(
             builder: (context, state, navigationShell) {
               final l10n = context.l10n;

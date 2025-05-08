@@ -8,9 +8,9 @@ import 'package:lune/features/injections.dart';
 
 Future<void> injectModules() async {
   configInjections();
+  uiInjections();
   await utilsInjections();
   await featureInjections();
-  uiInjections();
 }
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {

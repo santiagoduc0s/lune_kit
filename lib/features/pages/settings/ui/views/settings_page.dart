@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/core/ui/spacing/spacing.dart';
-import 'package:lune/features/core/app_preference/ui/widgets/toggle_button_theme.dart';
-import 'package:lune/features/core/app_preference/ui/widgets/toggle_text_scale.dart';
-import 'package:lune/features/pages/privacy_policy/ui/views/privacy_policy_screen.dart';
-import 'package:lune/features/pages/settings/widgets/widgets.dart';
-import 'package:lune/features/pages/terms_conditions/views/views.dart';
+import 'package:lune/features/core/app_preference/ui/widgets/widgets.dart';
+import 'package:lune/features/pages/privacy_policy/ui/views/views.dart';
+import 'package:lune/features/pages/terms_conditions/ui/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
 
 class SettingsPage extends StatelessWidget {

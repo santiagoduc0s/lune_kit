@@ -1,7 +1,7 @@
-import 'package:lune/features/pages/public_onboard/domain/enums/enums.dart';
+import 'package:lune/features/pages/public_onboard/domain/entities/entities.dart';
 
 abstract class PublicOnboardRepository {
-  Future<PublicOnboardStatusEnum> getStatus();
+  Future<PublicOnboardStatusEntity> getStatus();
 
-  Future<void> setStatus(PublicOnboardStatusEnum value);
+  Future<void> setStatus(PublicOnboardStatusEntity value);
 }

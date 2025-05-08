@@ -5,7 +5,7 @@ class SetPublicOnboardStatusUseCase {
 
   final PublicOnboardRepository _repository;
 
-  Future<void> call(PublicOnboardStatusEnum value) async {
+  Future<void> call(PublicOnboardStatusEntity value) async {
     await _repository.setStatus(value);
   }
 }

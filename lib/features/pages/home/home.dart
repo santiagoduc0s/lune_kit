@@ -1,1 +1,1 @@
-export 'ui/pages/views.dart';
+export 'ui/ui.dart';

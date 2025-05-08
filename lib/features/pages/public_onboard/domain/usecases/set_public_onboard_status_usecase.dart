@@ -5,7 +5,7 @@ class GetPublicOnboardStatusUseCase {
 
   final PublicOnboardRepository _repository;
 
-  Future<PublicOnboardStatusEnum> call() {
+  Future<PublicOnboardStatusEntity> call() {
     return _repository.getStatus();
   }
 }

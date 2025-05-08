@@ -1,7 +1,6 @@
 import 'package:lune/features/pages/public_onboard/data/datasources/datasources.dart';
 import 'package:lune/features/pages/public_onboard/data/models/models.dart';
-import 'package:lune/features/pages/public_onboard/domain/enums/public_onboard_status_enum.dart';
-import 'package:lune/features/pages/public_onboard/domain/repositories/repositories.dart';
+import 'package:lune/features/pages/public_onboard/domain/domain.dart';
 
 class PublicOnboardRepositoryImpl extends PublicOnboardRepository {
   PublicOnboardRepositoryImpl(this.datasource);
@@ -9,12 +8,12 @@ class PublicOnboardRepositoryImpl extends PublicOnboardRepository {
   final PublicOnboardDatasource datasource;
 
   @override
-  Future<PublicOnboardStatusEnum> getStatus() async {
-    return (await datasource.getStatus()).toEntity();
+  Future<PublicOnboardStatusEntity> getStatus() {
+    return datasource.getStatus();
   }
 
   @override
-  Future<void> setStatus(PublicOnboardStatusEnum value) {
+  Future<void> setStatus(PublicOnboardStatusEntity value) {
     return datasource.setStatus(PublicOnboardStatusModel.fromEntity(value));
   }
 }

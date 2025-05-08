@@ -1,37 +1,43 @@
+import 'package:lune/features/pages/public_onboard/domain/entities/public_onboard_status_entity.dart';
 import 'package:lune/features/pages/public_onboard/domain/enums/enums.dart';
 
-class PublicOnboardStatusModel {
+class PublicOnboardStatusModel extends PublicOnboardStatusEntity {
   PublicOnboardStatusModel({
-    required this.value,
+    required super.status,
   });
 
   factory PublicOnboardStatusModel.fromString(String? value) {
     return PublicOnboardStatusModel(
-      value: value ?? 'unseen',
+      status: _statusFromString(value),
     );
   }
 
   factory PublicOnboardStatusModel.fromEntity(
-    PublicOnboardStatusEnum value,
+    PublicOnboardStatusEntity entity,
   ) {
-    switch (value) {
-      case PublicOnboardStatusEnum.seen:
-        return PublicOnboardStatusModel(value: 'seen');
-      case PublicOnboardStatusEnum.unseen:
-        return PublicOnboardStatusModel(value: 'unseen');
-    }
+    return PublicOnboardStatusModel(
+      status: entity.status,
+    );
   }
 
-  final String value;
+  String toJson() => _stringFromStatus(status);
 
-  PublicOnboardStatusEnum toEntity() {
+  static PublicOnboardStatusEnum _statusFromString(String? value) {
     switch (value) {
       case 'seen':
         return PublicOnboardStatusEnum.seen;
       case 'unseen':
-        return PublicOnboardStatusEnum.unseen;
       default:
         return PublicOnboardStatusEnum.unseen;
+    }
+  }
+
+  static String _stringFromStatus(PublicOnboardStatusEnum status) {
+    switch (status) {
+      case PublicOnboardStatusEnum.seen:
+        return 'seen';
+      case PublicOnboardStatusEnum.unseen:
+        return 'unseen';
     }
   }
 }
