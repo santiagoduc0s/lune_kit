@@ -6,7 +6,7 @@ class SignInWithCredentialsUseCase {
   final AuthRepository authRepository;
 
   Future<AuthSessionEntity> call({
-    required AuthProviderEnum provider,
+    required AuthProviderEntity provider,
     String? idToken,
     String? accessToken,
   }) async {

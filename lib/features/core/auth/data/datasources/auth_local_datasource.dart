@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/auth/data/datasources/datasources.dart';
 import 'package:lune/features/core/auth/data/models/models.dart';
-import 'package:lune/features/core/auth/domain/enums/enums.dart';
 
 class AuthLocalDatasource extends AuthDatasource {
   @override
@@ -28,7 +27,7 @@ class AuthLocalDatasource extends AuthDatasource {
 
   @override
   Future<CredentialModel> signInWithCredentials({
-    required AuthProviderEnum provider,
+    required AuthProviderModel provider,
     String? idToken,
     String? accessToken,
     Map<String, dynamic>? extraData,

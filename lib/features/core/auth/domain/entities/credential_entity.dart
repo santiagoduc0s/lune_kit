@@ -9,7 +9,7 @@ class CredentialEntity extends Equatable {
   });
 
   final String accessToken;
-  final List<AuthProviderEnum> providers;
+  final List<AuthProviderEntity> providers;
   final Map<String, dynamic> extraData;
 
   @override

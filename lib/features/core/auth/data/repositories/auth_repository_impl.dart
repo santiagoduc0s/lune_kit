@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/auth/data/data.dart';
 import 'package:lune/features/core/auth/domain/entities/entities.dart';
-import 'package:lune/features/core/auth/domain/enums/enums.dart';
 import 'package:lune/features/core/auth/domain/repositories/repositories.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
@@ -14,14 +13,14 @@ class AuthRepositoryImpl extends AuthRepository {
   final AuthDatasource datasource;
 
   @override
-  Future<UserEntity> getCurrentUser() async {
-    return (await datasource.getCurrentUser()).toEntity();
+  Future<UserEntity> getCurrentUser() {
+    return datasource.getCurrentUser();
   }
 
   @override
   Future<AuthSessionEntity> getCurrentSession() async {
-    final user = (await datasource.getCurrentUser()).toEntity();
-    final cred = (await datasource.getCurrentCredential()).toEntity();
+    final user = await datasource.getCurrentUser();
+    final cred = await datasource.getCurrentCredential();
 
     return AuthSessionEntity(
       user: user,
@@ -36,15 +35,14 @@ class AuthRepositoryImpl extends AuthRepository {
     String? firstName,
     String? lastName,
     String? photo,
-  }) async {
-    return (await datasource.storeUser(
+  }) {
+    return datasource.storeUser(
       id: id,
       email: email,
       firstName: firstName,
       lastName: lastName,
       photo: photo,
-    ))
-        .toEntity();
+    );
   }
 
   @override
@@ -53,54 +51,50 @@ class AuthRepositoryImpl extends AuthRepository {
     String? firstName,
     String? lastName,
     NullableParameter<String?>? photo,
-  }) async {
-    return (await datasource.updateUser(
+  }) {
+    return datasource.updateUser(
       id: id,
       firstName: firstName,
       lastName: lastName,
       photo: photo,
-    ))
-        .toEntity();
+    );
   }
 
   @override
   Future<CredentialEntity> signInWithCredentials({
-    required AuthProviderEnum provider,
+    required AuthProviderEntity provider,
     String? idToken,
     String? accessToken,
     Map<String, dynamic>? extraData,
-  }) async {
-    return (await datasource.signInWithCredentials(
-      provider: provider,
+  }) {
+    return datasource.signInWithCredentials(
+      provider: AuthProviderModel.fromEntity(provider),
       idToken: idToken,
       accessToken: accessToken,
       extraData: extraData,
-    ))
-        .toEntity();
+    );
   }
 
   @override
   Future<CredentialEntity> signInWithEmailAndPassword({
     required String email,
     required String password,
-  }) async {
-    return (await datasource.signInWithEmailAndPassword(
+  }) {
+    return datasource.signInWithEmailAndPassword(
       email: email,
       password: password,
-    ))
-        .toEntity();
+    );
   }
 
   @override
   Future<CredentialEntity> signUpWithEmailAndPassword({
     required String email,
     required String password,
-  }) async {
-    return (await datasource.signUpWithEmailAndPassword(
+  }) {
+    return datasource.signUpWithEmailAndPassword(
       email: email,
       password: password,
-    ))
-        .toEntity();
+    );
   }
 
   @override

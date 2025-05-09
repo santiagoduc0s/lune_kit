@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/auth/data/models/models.dart';
-import 'package:lune/features/core/auth/domain/enums/enums.dart';
 
 abstract class AuthDatasource {
   Future<UserModel> getCurrentUser();
@@ -25,7 +24,7 @@ abstract class AuthDatasource {
   });
 
   Future<CredentialModel> signInWithCredentials({
-    required AuthProviderEnum provider,
+    required AuthProviderModel provider,
     String? idToken,
     String? accessToken,
     Map<String, dynamic>? extraData,
