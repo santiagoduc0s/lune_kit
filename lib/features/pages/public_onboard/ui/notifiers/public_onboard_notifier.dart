@@ -48,7 +48,7 @@ class PublicOnboardNotifier extends ChangeNotifier {
       router.goNamed(HomeScreen.path);
     } catch (e) {
       snackbar.show(
-        snackbar: (context) => Snackbars.error(
+        (context) => Snackbars.error(
           context,
           text: localization.tr.generalError,
         ),

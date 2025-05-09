@@ -18,7 +18,7 @@ class SplashNotifier extends ChangeNotifier {
     // Simulate loading custom animation
     await Future.delayed(const Duration(seconds: 2), () {});
 
-    if (AppConstant.publicOnBoard) {
+    if (AppConstant.publicOnBoardIsActive) {
       final e = await getPublicOnboardStatusUseCase.call();
       if (e.status == PublicOnboardStatusEnum.unseen) {
         return appRouter.goNamed(PublicOnboardScreen.path);

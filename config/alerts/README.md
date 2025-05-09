@@ -6,7 +6,7 @@ The ```AppSnackbar``` can show an ```SnackBar```
 
 ```dart
 Injector.findSingleton<AppSnackbar>().show(
-    snackbar: (context) => Snackbars.error(
+    (context) => Snackbars.error(
         context,
         text: '',
     ),

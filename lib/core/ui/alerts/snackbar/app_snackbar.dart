@@ -19,9 +19,10 @@ class AppSnackbar {
     return currentState.showSnackBar(snackbar);
   }
 
-  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> show({
-    required SnackBar Function(BuildContext) snackbar,
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> show(
+    SnackBar Function(BuildContext) snackbar, {
+    BuildContext? context,
   }) {
-    return _showSnackBar(snackbar(getContext()));
+    return _showSnackBar(snackbar(context ?? getContext()));
   }
 }

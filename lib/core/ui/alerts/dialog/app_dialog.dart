@@ -10,32 +10,35 @@ class AppDialog {
   final BuildContext Function() getContext;
 
   /// Shows a dialog to confirm an action, returning `true` if confirmed.
-  Future<bool> confirm({
-    required AlertDialog Function(BuildContext) dialog,
+  Future<bool> confirm(
+    AlertDialog Function(BuildContext) dialog, {
     bool barrierDismissible = false,
+    BuildContext? context,
   }) async {
     final result = await show<bool>(
-      dialog: dialog,
+      dialog,
       barrierDismissible: barrierDismissible,
+      context: context,
     );
     return result != null && result == true;
   }
 
   /// Shows a generic dialog and returns a value of type [T].
-  Future<T?> show<T>({
-    required AlertDialog Function(BuildContext) dialog,
+  Future<T?> show<T>(
+    AlertDialog Function(BuildContext) dialog, {
     bool barrierDismissible = false,
+    BuildContext? context,
   }) {
-    final context = getContext();
+    final ctx = context ?? getContext();
 
-    if (!context.mounted) {
+    if (!ctx.mounted) {
       throw Exception('Dialog context is not mounted');
     }
 
     return showDialog<T>(
-      context: context,
+      context: ctx,
       barrierDismissible: barrierDismissible,
-      builder: (ctx) {
+      builder: (context) {
         return dialog(context);
       },
     );
