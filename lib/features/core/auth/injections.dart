@@ -5,7 +5,7 @@ import 'package:lune/features/core/auth/domain/repositories/repositories.dart';
 import 'package:lune/features/core/auth/domain/usecases/usecases.dart';
 import 'package:lune/features/core/auth/ui/notifiers/notifiers.dart';
 
-Future<void> appPreferenceInjections() async {
+Future<void> authInjections() async {
   /// DATASOURCE
   Injector.registerSingleton<AuthDatasource>(
     AuthLocalDatasource(),
@@ -25,6 +25,10 @@ Future<void> appPreferenceInjections() async {
 
   Injector.registerSingleton<ForgotPasswordUseCase>(
     ForgotPasswordUseCase(Injector.findSingleton()),
+  );
+
+  Injector.registerSingleton<GetCurrentSessionUseCase>(
+    GetCurrentSessionUseCase(Injector.findSingleton()),
   );
 
   Injector.registerSingleton<SignInWithCredentialsUseCase>(
@@ -47,14 +51,19 @@ Future<void> appPreferenceInjections() async {
     UpdatePasswordUseCase(Injector.findSingleton()),
   );
 
-  Injector.registerSingleton<UpdatePasswordUseCase>(
-    UpdatePasswordUseCase(Injector.findSingleton()),
+  Injector.registerSingleton<UpdateProfileUseCase>(
+    UpdateProfileUseCase(Injector.findSingleton()),
   );
 
   /// NOTIFIER
+  final authNotifier = AuthNotifier(
+    router: Injector.findSingleton(),
+    getCurrentSessionUseCase: Injector.findSingleton(),
+  );
+
+  await authNotifier.initialize();
+
   Injector.registerSingleton<AuthNotifier>(
-    AuthNotifier(
-      router: Injector.findSingleton(),
-    ),
+    authNotifier,
   );
 }

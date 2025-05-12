@@ -38,6 +38,8 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.signUp),
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: 0,
       ),
       body: CustomScrollView(
         slivers: [

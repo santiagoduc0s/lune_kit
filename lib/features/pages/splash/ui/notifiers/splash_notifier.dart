@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lune/config/config.dart';
+import 'package:lune/features/core/auth/ui/pages/sign_in/views/views.dart';
 import 'package:lune/features/pages/home/home.dart';
 import 'package:lune/features/pages/public_onboard/domain/enums/enums.dart';
 import 'package:lune/features/pages/public_onboard/domain/usecases/usecases.dart';
@@ -14,7 +15,7 @@ class SplashNotifier extends ChangeNotifier {
   final GetPublicOnboardStatusUseCase getPublicOnboardStatusUseCase;
   final AppRouter appRouter;
 
-  Future<void> initialize() async {
+  Future<void> initialize({bool isLoggedIn = false}) async {
     // Simulate loading custom animation
     await Future.delayed(const Duration(seconds: 2), () {});
 
@@ -22,6 +23,14 @@ class SplashNotifier extends ChangeNotifier {
       final e = await getPublicOnboardStatusUseCase.call();
       if (e.status == PublicOnboardStatusEnum.unseen) {
         return appRouter.goNamed(PublicOnboardScreen.path);
+      }
+    }
+
+    if (AppConstant.authIsActive) {
+      if (isLoggedIn) {
+        return appRouter.goNamed(HomeScreen.path);
+      } else {
+        return appRouter.goNamed(SignInScreen.path);
       }
     }
 

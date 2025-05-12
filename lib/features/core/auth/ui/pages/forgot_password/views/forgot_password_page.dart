@@ -44,7 +44,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   SizedBox(height: 8.space),
                   Hero(
                     tag: 'logo',
-                    child: iconProvider.logo(size: 3.space),
+                    child: iconProvider.logo(size: 40.space),
                   ),
                   SizedBox(height: 4.space),
                   ReactiveForm(

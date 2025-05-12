@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lune/config/router/router.dart';
-import 'package:lune/core/ui/alerts/snackbar/snackbar.dart';
 import 'package:lune/core/ui/animations/animations.dart';
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/auth/ui/notifiers/notifiers.dart';
@@ -31,9 +29,9 @@ class SignInScreen {
                 onSignInSuccess: (session) {
                   context.read<AuthNotifier>().setSession(session);
                 },
-                snackbar: context.read<AppSnackbar>(),
-                localization: context.read<Localization>(),
-                router: context.read<AppRouter>(),
+                snackbar: Injector.findSingleton(),
+                localization: Injector.findSingleton(),
+                router: Injector.findSingleton(),
               ),
               child: const SignInPage(),
             ),

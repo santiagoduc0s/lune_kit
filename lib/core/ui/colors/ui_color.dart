@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lune/core/ui/colors/colors.dart';
-import 'package:material_color_utilities/material_color_utilities.dart';
 
 /// Abstract class for UIColor.
 abstract class UIColor {
