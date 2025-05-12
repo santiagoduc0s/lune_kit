@@ -4,7 +4,8 @@ import 'package:material_color_utilities/material_color_utilities.dart';
 /// Abstract class for UIColor.
 class HctColor {
   /// Generates a Material 3 color palette based on the provided HCT color.
-  static Map<int, Color> generateMaterial3TonesHct(Hct baseColor) {
+  static Map<int, Color> generateMaterial3TonesHct(int baseColorInt) {
+    final baseColor = Hct.fromInt(baseColorInt);
     final baseHue = baseColor.hue;
     final baseChroma = baseColor.chroma;
 

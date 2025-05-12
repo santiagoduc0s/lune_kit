@@ -24,7 +24,7 @@ abstract class UIColor {
   final MaterialColor primarySchema = MaterialColor(
     _primaryGenerator,
     HctColor.generateMaterial3TonesHct(
-      Hct.fromInt(_primaryGenerator),
+      _primaryGenerator,
     ),
   );
 
@@ -32,7 +32,7 @@ abstract class UIColor {
   final MaterialColor secondarySchema = MaterialColor(
     _secondaryGenerator,
     HctColor.generateMaterial3TonesHct(
-      Hct.fromInt(_secondaryGenerator),
+      _secondaryGenerator,
     ),
   );
 
@@ -40,7 +40,7 @@ abstract class UIColor {
   final MaterialColor tertiarySchema = MaterialColor(
     _tertiaryGenerator,
     HctColor.generateMaterial3TonesHct(
-      Hct.fromInt(_tertiaryGenerator),
+      _tertiaryGenerator,
     ),
   );
 
@@ -48,7 +48,7 @@ abstract class UIColor {
   final MaterialColor errorSchema = MaterialColor(
     _errorGenerator,
     HctColor.generateMaterial3TonesHct(
-      Hct.fromInt(_errorGenerator),
+      _errorGenerator,
     ),
   );
 
@@ -56,7 +56,7 @@ abstract class UIColor {
   final MaterialColor neutralSchema = MaterialColor(
     _neutralGenerator,
     HctColor.generateMaterial3TonesHct(
-      Hct.fromInt(_neutralGenerator),
+      _neutralGenerator,
     ),
   );
 
@@ -64,7 +64,7 @@ abstract class UIColor {
   final MaterialColor neutralVariantSchema = MaterialColor(
     _neutralVariantGenerator,
     HctColor.generateMaterial3TonesHct(
-      Hct.fromInt(_neutralVariantGenerator),
+      _neutralVariantGenerator,
     ),
   );
 
