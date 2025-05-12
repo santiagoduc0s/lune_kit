@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:lune/config/config.dart';
+import 'package:lune/features/core/auth/ui/screens/sign_in/views/views.dart';
+import 'package:lune/features/screens/home/home.dart';
+import 'package:lune/features/screens/public_onboard/domain/enums/enums.dart';
+import 'package:lune/features/screens/public_onboard/domain/usecases/usecases.dart';
+import 'package:lune/features/screens/public_onboard/ui/views/views.dart';
+
+class SplashNotifier extends ChangeNotifier {
+  SplashNotifier({
+    required this.getPublicOnboardStatusUseCase,
+    required this.appRouter,
+  });
+
+  final GetPublicOnboardStatusUseCase getPublicOnboardStatusUseCase;
+  final AppRouter appRouter;
+
+  Future<void> initialize({bool isLoggedIn = false}) async {
+    // Simulate loading custom animation
+    await Future.delayed(const Duration(seconds: 2), () {});
+
+    if (AppConstant.publicOnBoardIsActive) {
+      final e = await getPublicOnboardStatusUseCase.call();
+      if (e.status == PublicOnboardStatusEnum.unseen) {
+        return appRouter.goNamed(PublicOnboardScreen.path);
+      }
+    }
+
+    if (AppConstant.authIsActive) {
+      if (isLoggedIn) {
+        return appRouter.goNamed(HomeScreen.path);
+      } else {
+        return appRouter.goNamed(SignInScreen.path);
+      }
+    }
+
+    appRouter.goNamed(HomeScreen.path);
+  }
+}
