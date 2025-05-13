@@ -30,6 +30,10 @@ class AuthNotifier extends ChangeNotifier {
     router.refresh();
   }
 
+  void signOut() {
+    setSession(null);
+  }
+
   void setUser(UserEntity user) {
     session = session?.copyWith(user: user);
     notifyListeners();

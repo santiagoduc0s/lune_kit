@@ -26,7 +26,6 @@ class SignUpPage extends StatelessWidget {
     final form = context.read<SignUpNotifier>().form;
 
     final buttonsProvider = context.buttonStyles;
-    final iconProvider = context.icons;
     final inputsProvider = context.inputStyles;
 
     final isSigningUp = context.select(
@@ -51,16 +50,15 @@ class SignUpPage extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 8.space),
-                  Hero(
-                    tag: 'logo',
-                    child: iconProvider.logo(size: 34.space),
-                  ),
-                  SizedBox(height: 8.space),
                   ReactiveFormBuilder(
                     form: () => form,
                     builder: (context, form, child) {
                       return Column(
                         children: [
+                          const PhotoProfilePickerField(
+                            formControlName: 'photo',
+                          ),
+                          SizedBox(height: 4.space),
                           ReactiveTextField<String>(
                             formControlName: 'firstName',
                             textInputAction: TextInputAction.next,

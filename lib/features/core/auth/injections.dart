@@ -8,7 +8,7 @@ import 'package:lune/features/core/auth/ui/notifiers/notifiers.dart';
 Future<void> authInjections() async {
   /// DATASOURCE
   Injector.registerSingleton<AuthDatasource>(
-    AuthLocalDatasource(),
+    AuthDevDatasource(),
   );
 
   /// REPOSITORY

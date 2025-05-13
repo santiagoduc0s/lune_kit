@@ -10,6 +10,7 @@ class SignUpUseCase {
     required String password,
     required String firstName,
     required String lastName,
+    String? photo,
   }) async {
     final cred = await _authRepository.signUpWithEmailAndPassword(
       email: email,
@@ -21,6 +22,7 @@ class SignUpUseCase {
       email: email,
       firstName: firstName,
       lastName: lastName,
+      photo: photo,
     );
 
     return AuthSessionEntity(

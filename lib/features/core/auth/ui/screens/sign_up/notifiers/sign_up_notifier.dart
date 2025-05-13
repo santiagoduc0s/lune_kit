@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:lune/config/router/router.dart';
 import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/core/form/validators/validators.dart';
@@ -24,6 +25,7 @@ class SignUpNotifier extends ChangeNotifier {
 
   final form = FormGroup(
     {
+      'photo': FormControl<XFile?>(),
       'firstName': FormControl<String>(
         value: '',
         validators: [Validators.required],
@@ -64,11 +66,15 @@ class SignUpNotifier extends ChangeNotifier {
     _setSigningUp(true);
 
     try {
+      // storage repo
+      final photo = form.control('photo').value as XFile?;
+
       await signUpUseCase.call(
         email: form.control('email').value as String,
         password: form.control('password').value as String,
         firstName: form.control('firstName').value as String,
         lastName: form.control('lastName').value as String,
+        photo: photo?.path,
       );
 
       router.pop({

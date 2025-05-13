@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lune/config/constants/constants.dart';
 import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/core/ui/spacing/spacing.dart';
 import 'package:lune/features/core/app_preference/ui/widgets/widgets.dart';
 import 'package:lune/features/screens/privacy_policy/ui/views/views.dart';
+import 'package:lune/features/screens/settings/ui/notifiers/notifiers.dart';
 import 'package:lune/features/screens/terms_conditions/ui/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
+import 'package:provider/provider.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -46,6 +49,16 @@ class SettingsPage extends StatelessWidget {
                 style: buttonStyles.primaryFilled,
                 child: Text(l10n.privacyPolicy),
               ),
+              if (AppConstant.authIsActive) ...{
+                SizedBox(height: 5.space),
+                TextButton(
+                  onPressed: () {
+                    context.read<SettingsNotifier>().onSignOut();
+                  },
+                  style: buttonStyles.primaryText,
+                  child: Text(l10n.signOut),
+                ),
+              },
             ],
           ),
         ),

@@ -104,10 +104,11 @@ class SignInNotifier extends ChangeNotifier {
     form.control('email').value = result['email'];
     form.control('password').value = result['password'];
 
-    primarySnackbar(
-      snackbar,
-      localization.tr.signIn_emailValidationSent,
-    );
+    /// If the user should validate the email
+    // primarySnackbar(
+    //   snackbar,
+    //   localization.tr.signIn_emailValidationSent,
+    // );
   }
 
   Future<void> goToForgotPassword() async {

@@ -18,15 +18,9 @@ class SignInPage extends StatelessWidget {
       bottomPadding = 4.space;
     }
 
-    var topPadding = MediaQuery.of(context).padding.top;
-    if (topPadding == 0) {
-      topPadding = 4.space;
-    }
-
     final form = context.read<SignInNotifier>().form;
 
     final buttonsProvider = context.buttonStyles;
-    final iconProvider = context.icons;
     final inputsProvider = context.inputStyles;
 
     final isSingingWithEmailAndPassword = context.select(
@@ -36,6 +30,11 @@ class SignInPage extends StatelessWidget {
     final l10n = context.l10n;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(l10n.signIn),
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: 0,
+      ),
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -45,12 +44,6 @@ class SignInPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  SizedBox(height: topPadding),
-                  SizedBox(height: 8.space),
-                  Hero(
-                    tag: 'logo',
-                    child: iconProvider.logo(size: 50.space),
-                  ),
                   SizedBox(height: 8.space),
                   ReactiveForm(
                     formGroup: form,

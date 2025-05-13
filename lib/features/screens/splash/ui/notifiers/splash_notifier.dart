@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lune/config/config.dart';
 import 'package:lune/features/core/auth/ui/screens/sign_in/views/views.dart';
 import 'package:lune/features/screens/home/home.dart';
@@ -17,7 +18,7 @@ class SplashNotifier extends ChangeNotifier {
 
   Future<void> initialize({bool isLoggedIn = false}) async {
     // Simulate loading custom animation
-    await Future.delayed(const Duration(seconds: 2), () {});
+    await Future.delayed(2600.ms, () {});
 
     if (AppConstant.publicOnBoardIsActive) {
       final e = await getPublicOnboardStatusUseCase.call();
