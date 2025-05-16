@@ -25,7 +25,7 @@ class ResetPasswordNotifier extends ChangeNotifier {
   final UserEntity user;
   final AppSnackbar snackbar;
   final Localization localization;
-  final AppRouter router;
+  final CustomRouter router;
 
   final FormGroup form = FormGroup(
     {

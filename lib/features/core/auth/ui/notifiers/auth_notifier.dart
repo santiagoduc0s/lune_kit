@@ -9,7 +9,7 @@ class AuthNotifier extends ChangeNotifier {
     required this.getCurrentSessionUseCase,
   });
 
-  final AppRouter router;
+  final CustomRouter router;
   final GetCurrentSessionUseCase getCurrentSessionUseCase;
 
   AuthSessionEntity? session;

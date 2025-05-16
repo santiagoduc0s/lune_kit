@@ -10,11 +10,11 @@ import 'package:lune/features/screens/public_onboard/ui/views/views.dart';
 class SplashNotifier extends ChangeNotifier {
   SplashNotifier({
     required this.getPublicOnboardStatusUseCase,
-    required this.appRouter,
+    required this.router,
   });
 
   final GetPublicOnboardStatusUseCase getPublicOnboardStatusUseCase;
-  final AppRouter appRouter;
+  final CustomRouter router;
 
   Future<void> initialize({bool isLoggedIn = false}) async {
     // Simulate loading custom animation
@@ -23,18 +23,18 @@ class SplashNotifier extends ChangeNotifier {
     if (AppConstant.publicOnBoardIsActive) {
       final e = await getPublicOnboardStatusUseCase.call();
       if (e.status == PublicOnboardStatusEnum.unseen) {
-        return appRouter.goNamed(PublicOnboardScreen.path);
+        return router.goNamed(PublicOnboardScreen.path);
       }
     }
 
     if (AppConstant.authIsActive) {
       if (isLoggedIn) {
-        return appRouter.goNamed(HomeScreen.path);
+        return router.goNamed(HomeScreen.path);
       } else {
-        return appRouter.goNamed(SignInScreen.path);
+        return router.goNamed(SignInScreen.path);
       }
     }
 
-    appRouter.goNamed(HomeScreen.path);
+    router.goNamed(HomeScreen.path);
   }
 }

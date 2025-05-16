@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lune/config/constants/constants.dart';
+import 'package:lune/config/router/router.dart';
 import 'package:lune/core/ui/animations/animations.dart';
 import 'package:lune/core/ui/widgets/widgets.dart';
 import 'package:lune/core/utils/utils.dart';
@@ -19,8 +20,8 @@ import 'package:lune/features/screens/terms_conditions/ui/views/views.dart';
 import 'package:lune/l10n/l10n.dart';
 import 'package:provider/provider.dart';
 
-class AppRouter {
-  AppRouter() {
+class GoRouterCustomRouter extends CustomRouter {
+  GoRouterCustomRouter() {
     router = GoRouter(
       navigatorKey: AppGlobalKey.rootNavigatorKey,
       initialLocation: SplashScreen.path,
@@ -127,7 +128,8 @@ class AppRouter {
     );
   }
 
-  late RouterConfig<RouteMatchList> router;
+  @override
+  late RouterConfig<Object> router;
 
   final publicRoutes = [
     PublicOnboardScreen.path,
@@ -161,10 +163,12 @@ class AppRouter {
     return realRedirectTo;
   }
 
+  @override
   void refresh() {
     return (router as GoRouter).refresh();
   }
 
+  @override
   Future<T?> pushNamed<T>(
     String name, {
     Object? extra,
@@ -179,6 +183,7 @@ class AppRouter {
     );
   }
 
+  @override
   void goNamed(
     String name, {
     Object? extra,
@@ -193,6 +198,7 @@ class AppRouter {
     );
   }
 
+  @override
   void pop<T extends Object?>([T? result]) {
     return (router as GoRouter).pop<T>(result);
   }

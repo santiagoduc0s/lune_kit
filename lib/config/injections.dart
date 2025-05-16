@@ -3,5 +3,5 @@ import 'package:lune/core/utils/utils.dart';
 
 void configInjections() {
   /// ROUTER
-  Injector.registerSingleton<AppRouter>(AppRouter());
+  Injector.registerSingleton<CustomRouter>(GoRouterCustomRouter());
 }

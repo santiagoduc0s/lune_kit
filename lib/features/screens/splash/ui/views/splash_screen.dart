@@ -26,7 +26,7 @@ class SplashScreen {
             lazy: false,
             create: (context) => SplashNotifier(
               getPublicOnboardStatusUseCase: Injector.findSingleton(),
-              appRouter: Injector.findSingleton(),
+              router: Injector.findSingleton(),
             )..initialize(isLoggedIn: authNotifier.isLoggedIn),
             child: const SplashPage(),
           ),

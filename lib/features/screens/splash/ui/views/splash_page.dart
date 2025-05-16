@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lune/core/extensions/extensions.dart';
 
-// imports stay the same …
-
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 

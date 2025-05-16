@@ -24,7 +24,7 @@ class SignInNotifier extends ChangeNotifier {
   final void Function(AuthSessionEntity session) onSignInSuccess;
   final AppSnackbar snackbar;
   final Localization localization;
-  final AppRouter router;
+  final CustomRouter router;
 
   final FormGroup form = FormGroup({
     'email': FormControl<String>(

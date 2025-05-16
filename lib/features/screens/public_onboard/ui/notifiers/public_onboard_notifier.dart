@@ -19,7 +19,7 @@ class PublicOnboardNotifier extends ChangeNotifier {
   SetPublicOnboardStatusUseCase setStatusUseCase;
   GetPublicOnboardStatusUseCase getStatusUseCase;
 
-  AppRouter router;
+  CustomRouter router;
   AppSnackbar snackbar;
   Localization localization;
 
