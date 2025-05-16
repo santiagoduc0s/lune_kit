@@ -15,7 +15,7 @@ class ForgotPasswordNotifier extends ChangeNotifier {
   });
 
   final ForgotPasswordUseCase forgotPasswordUseCase;
-  final AppSnackbar snackbar;
+  final CustomSnackbar snackbar;
   final Localization localization;
   final CustomRouter router;
 

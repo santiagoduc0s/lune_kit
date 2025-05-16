@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lune/core/ui/alerts/snackbar/snackbar.dart';
 
 /// A singleton class for displaying custom snackbars.
-class AppSnackbar {
+class AppSnackbar extends CustomSnackbar {
   AppSnackbar({
     required this.getScaffoldMessenger,
     required this.getContext,
@@ -19,6 +20,7 @@ class AppSnackbar {
     return currentState.showSnackBar(snackbar);
   }
 
+  @override
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> show(
     SnackBar Function(BuildContext) snackbar, {
     BuildContext? context,

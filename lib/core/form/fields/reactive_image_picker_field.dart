@@ -8,18 +8,18 @@ class ReactiveImagePickerField extends ReactiveFormField<XFile?, XFile?> {
     required this.builder,
     super.key,
     this.imageQuality = 90,
-    this.onImageSelected,
+    this.onError,
   }) : super(
           formControlName: formControlName,
           builder: (field) => _ImagePickerContent(
             field: field,
             imageQuality: imageQuality,
             customBuilder: builder,
+            onError: onError,
           ),
         );
 
   final int imageQuality;
-  final void Function(XFile?)? onImageSelected;
 
   final Widget Function(
     BuildContext,
@@ -29,6 +29,8 @@ class ReactiveImagePickerField extends ReactiveFormField<XFile?, XFile?> {
     VoidCallback,
     VoidCallback,
   ) builder;
+
+  final void Function()? onError;
 }
 
 class _ImagePickerContent extends StatefulWidget {
@@ -36,6 +38,7 @@ class _ImagePickerContent extends StatefulWidget {
     required this.field,
     required this.imageQuality,
     required this.customBuilder,
+    this.onError,
   });
 
   final ReactiveFormFieldState<XFile?, XFile?> field;
@@ -48,6 +51,8 @@ class _ImagePickerContent extends StatefulWidget {
     VoidCallback,
     VoidCallback,
   ) customBuilder;
+
+  final void Function()? onError;
 
   @override
   State<_ImagePickerContent> createState() => _ImagePickerContentState();
@@ -68,7 +73,7 @@ class _ImagePickerContentState extends State<_ImagePickerContent> {
         widget.field.didChange(image);
       }
     } catch (e) {
-      debugPrint('Error picking image: $e');
+      widget.onError?.call();
     } finally {
       if (mounted) setState(() => _isProcessing = false);
     }

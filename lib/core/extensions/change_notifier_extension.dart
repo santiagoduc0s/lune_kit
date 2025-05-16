@@ -18,7 +18,7 @@ extension ChangeNotifierX on ChangeNotifier {
     AppLogger.instance.debug(message.toString(), stackTrace: stackTrace);
   }
 
-  void primarySnackbar(AppSnackbar snackbar, String text) {
+  void primarySnackbar(CustomSnackbar snackbar, String text) {
     snackbar.show(
       (context) => Snackbars.error(
         context,
@@ -27,7 +27,7 @@ extension ChangeNotifierX on ChangeNotifier {
     );
   }
 
-  void errorSnackbar(AppSnackbar snackbar, String text) {
+  void errorSnackbar(CustomSnackbar snackbar, String text) {
     snackbar.show(
       (context) => Snackbars.error(
         context,

@@ -8,7 +8,7 @@ void uiInjections() {
   );
 
   /// SNACKBAR
-  Injector.registerSingleton(
+  Injector.registerSingleton<CustomSnackbar>(
     AppSnackbar(
       getScaffoldMessenger: () => AppGlobalKey.scaffoldMessengerState()!,
       getContext: () => AppGlobalKey.getRootContext()!,

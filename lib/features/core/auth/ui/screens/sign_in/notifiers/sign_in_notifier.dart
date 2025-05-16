@@ -22,7 +22,7 @@ class SignInNotifier extends ChangeNotifier {
 
   final SignInWithEmailPasswordUseCase signInWithEmailPasswordUseCase;
   final void Function(AuthSessionEntity session) onSignInSuccess;
-  final AppSnackbar snackbar;
+  final CustomSnackbar snackbar;
   final Localization localization;
   final CustomRouter router;
 

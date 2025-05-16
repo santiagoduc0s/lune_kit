@@ -17,7 +17,7 @@ class ProfileNotifier extends ChangeNotifier {
   });
 
   final UpdateProfileUseCase updateProfileUseCase;
-  final AppSnackbar snackbar;
+  final CustomSnackbar snackbar;
   final Localization localization;
 
   UserEntity user;

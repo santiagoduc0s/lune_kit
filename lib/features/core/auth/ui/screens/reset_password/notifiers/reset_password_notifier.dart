@@ -23,7 +23,7 @@ class ResetPasswordNotifier extends ChangeNotifier {
   final SignInWithEmailPasswordUseCase signInWithEmailPasswordUseCase;
   final UpdatePasswordUseCase updatePasswordUseCase;
   final UserEntity user;
-  final AppSnackbar snackbar;
+  final CustomSnackbar snackbar;
   final Localization localization;
   final CustomRouter router;
 

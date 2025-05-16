@@ -19,7 +19,7 @@ class SignUpNotifier extends ChangeNotifier {
 
   final SignUpUseCase signUpUseCase;
   final CustomRouter router;
-  final AppSnackbar snackbar;
+  final CustomSnackbar snackbar;
   final Localization localization;
   bool isSigningUp = false;
 

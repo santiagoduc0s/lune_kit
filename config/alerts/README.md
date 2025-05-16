@@ -1,11 +1,11 @@
 # AppSnackbar
 
-The ```AppSnackbar``` can show an ```SnackBar```
+The ```AppSnackbar``` can show a ```SnackBar```
 
 ## Example
 
 ```dart
-Injector.findSingleton<AppSnackbar>().show(
+Injector.findSingleton<CustomSnackbar>().show(
     (context) => Snackbars.error(
         context,
         text: '',

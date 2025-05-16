@@ -3,6 +3,7 @@ import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/core/form/fields/fields.dart';
 import 'package:lune/core/ui/spacing/spacing.dart';
 import 'package:lune/core/ui/widgets/widgets.dart';
+import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/auth/ui/screens/sign_up/notifiers/notifiers.dart';
 import 'package:lune/l10n/l10n.dart';
 import 'package:provider/provider.dart';
@@ -55,8 +56,9 @@ class SignUpPage extends StatelessWidget {
                     builder: (context, form, child) {
                       return Column(
                         children: [
-                          const PhotoProfilePickerField(
+                          PhotoProfilePickerField(
                             formControlName: 'photo',
+                            snackbar: Injector.findSingleton(),
                           ),
                           SizedBox(height: 4.space),
                           ReactiveTextField<String>(
