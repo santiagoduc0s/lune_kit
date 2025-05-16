@@ -27,13 +27,12 @@ class PhotoProfilePickerField extends StatelessWidget {
     return ReactiveImagePickerField(
       formControlName: formControlName,
       imageQuality: imageQuality ?? 90,
-      onError: () {
-        snackbar.show((ctx) {
-          return Snackbars.error(
-            ctx,
-            text: l10n.error,
-          );
-        });
+      onError: (e) {
+        snackbar.show(
+          ErrorSnackBar(
+            text: l10n.generalError,
+          ),
+        );
       },
       builder: (
         context,

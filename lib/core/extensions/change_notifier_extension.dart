@@ -18,20 +18,28 @@ extension ChangeNotifierX on ChangeNotifier {
     AppLogger.instance.debug(message.toString(), stackTrace: stackTrace);
   }
 
-  void primarySnackbar(CustomSnackbar snackbar, String text) {
+  void primarySnackbar(
+    CustomSnackbar snackbar,
+    String text, [
+    void Function()? onTap,
+  ]) {
     snackbar.show(
-      (context) => Snackbars.error(
-        context,
+      PrimarySnackBar(
         text: text,
+        onTap: onTap,
       ),
     );
   }
 
-  void errorSnackbar(CustomSnackbar snackbar, String text) {
+  void errorSnackbar(
+    CustomSnackbar snackbar,
+    String text, [
+    void Function()? onTap,
+  ]) {
     snackbar.show(
-      (context) => Snackbars.error(
-        context,
+      ErrorSnackBar(
         text: text,
+        onTap: onTap,
       ),
     );
   }

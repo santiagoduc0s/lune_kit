@@ -73,22 +73,10 @@ class ProfileNotifier extends ChangeNotifier {
         lastName: form.control('lastName').value as String,
       );
 
-      snackbar.show(
-        (ctx) => Snackbars.primary(
-          ctx,
-          text: localization.tr.profile_userUpdated,
-        ),
-      );
+      primarySnackbar(snackbar, localization.tr.profile_userUpdated);
     } catch (e, s) {
-      snackbar.show(
-        (ctx) => Snackbars.error(
-          ctx,
-          text: localization.tr.profile_userUpdated,
-        ),
-      );
-
+      errorSnackbar(snackbar, localization.tr.generalError);
       logError(e, s);
-      AppLogger.instance.error(e.toString(), stackTrace: s);
     } finally {
       _isUpdatingData(false);
     }

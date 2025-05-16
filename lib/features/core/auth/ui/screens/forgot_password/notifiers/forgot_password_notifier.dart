@@ -65,22 +65,11 @@ class ForgotPasswordNotifier extends ChangeNotifier {
       final email = form.control('email').value as String;
       await forgotPasswordUseCase.call(email: email);
 
-      snackbar.show(
-        (ctx) => Snackbars.primary(
-          ctx,
-          text: localization.tr.forgotPassword_emailSent,
-        ),
-      );
+      primarySnackbar(snackbar, localization.tr.forgotPassword_emailSent);
 
       router.pop(email);
     } catch (e, s) {
-      snackbar.show(
-        (ctx) => Snackbars.error(
-          ctx,
-          text: localization.tr.generalError,
-        ),
-      );
-
+      errorSnackbar(snackbar, localization.tr.generalError);
       logError(e, s);
     } finally {
       setIsSendingEmail(false);

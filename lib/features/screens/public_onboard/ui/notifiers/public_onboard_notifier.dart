@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lune/config/config.dart';
+import 'package:lune/core/extensions/extensions.dart';
 import 'package:lune/core/ui/alerts/snackbar/snackbar.dart';
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/screens/home/ui/views/views.dart';
@@ -45,14 +46,11 @@ class PublicOnboardNotifier extends ChangeNotifier {
           status: PublicOnboardStatusEnum.seen,
         ),
       );
+
       router.goNamed(HomeScreen.path);
-    } catch (e) {
-      snackbar.show(
-        (context) => Snackbars.error(
-          context,
-          text: localization.tr.generalError,
-        ),
-      );
+    } catch (e, s) {
+      errorSnackbar(snackbar, localization.tr.generalError);
+      logError(e, s);
     } finally {
       _setLoading(false);
     }

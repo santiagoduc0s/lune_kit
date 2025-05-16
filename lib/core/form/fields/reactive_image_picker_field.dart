@@ -30,7 +30,7 @@ class ReactiveImagePickerField extends ReactiveFormField<XFile?, XFile?> {
     VoidCallback,
   ) builder;
 
-  final void Function()? onError;
+  final void Function(Object error)? onError;
 }
 
 class _ImagePickerContent extends StatefulWidget {
@@ -52,7 +52,7 @@ class _ImagePickerContent extends StatefulWidget {
     VoidCallback,
   ) customBuilder;
 
-  final void Function()? onError;
+  final void Function(Object error)? onError;
 
   @override
   State<_ImagePickerContent> createState() => _ImagePickerContentState();
@@ -73,7 +73,7 @@ class _ImagePickerContentState extends State<_ImagePickerContent> {
         widget.field.didChange(image);
       }
     } catch (e) {
-      widget.onError?.call();
+      widget.onError?.call(e);
     } finally {
       if (mounted) setState(() => _isProcessing = false);
     }
