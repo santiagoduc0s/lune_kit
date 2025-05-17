@@ -20,7 +20,7 @@ The ```AppDialog``` can show an ```AlertDialog```
 ## Example
 
 ```dart
-Injector.findSingleton<AppDialog>().confirm(
+Injector.findSingleton<CustomDialog>().confirm(
     dialog: (context) => Dialogs.confirm(
         context,
         message: '',

@@ -45,32 +45,26 @@ extension ChangeNotifierX on ChangeNotifier {
   }
 
   Future<bool> dialogConfirm(
-    AppDialog dialog, {
+    CustomDialog dialog, {
     required String message,
     required String confirmText,
     required String cancelText,
   }) {
     return dialog.confirm(
-      (context) => Dialogs.confirm(
-        context,
-        message: message,
-        confirmText: confirmText,
-        cancelText: cancelText,
-      ),
+      message: message,
+      confirmText: confirmText,
+      cancelText: cancelText,
     );
   }
 
   Future<void> dialogInfo(
-    AppDialog dialog, {
+    CustomDialog dialog, {
     required String message,
     required String confirmText,
   }) {
-    return dialog.confirm(
-      (context) => Dialogs.info(
-        context,
-        message: message,
-        confirmText: confirmText,
-      ),
+    return dialog.info(
+      message: message,
+      confirmText: confirmText,
     );
   }
 }

@@ -1,46 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:lune/core/ui/alerts/dialog/dialog.dart';
 
-/// A service for displaying custom dialogs in a Flutter application.
-/// Use dependency injection to provide BuildContext or override in tests.
-class AppDialog {
-  const AppDialog(this.getContext);
+class AppDialog extends CustomDialog {
+  AppDialog(this.getContext);
 
-  /// A function that returns the current [BuildContext].
-  /// Allows injecting context in tests or different parts of the widget tree.
   final BuildContext Function() getContext;
 
-  /// Shows a dialog to confirm an action, returning `true` if confirmed.
-  Future<bool> confirm(
-    AlertDialog Function(BuildContext) dialog, {
-    bool barrierDismissible = false,
-    BuildContext? context,
+  @override
+  Future<bool> confirm({
+    required String message,
+    required String confirmText,
+    required String cancelText,
   }) async {
     final result = await show<bool>(
-      dialog,
-      barrierDismissible: barrierDismissible,
-      context: context,
+      context: getContext(),
+      builder: (_) => ConfirmDialog(
+        message: message,
+        confirmText: confirmText,
+        cancelText: cancelText,
+      ),
     );
     return result != null && result == true;
   }
 
-  /// Shows a generic dialog and returns a value of type [T].
-  Future<T?> show<T>(
-    AlertDialog Function(BuildContext) dialog, {
-    bool barrierDismissible = false,
-    BuildContext? context,
+  @override
+  Future<void> info({
+    required String message,
+    required String confirmText,
   }) {
-    final ctx = context ?? getContext();
+    return show<void>(
+      context: getContext(),
+      builder: (_) => InfoDialog(
+        message: message,
+        confirmText: confirmText,
+      ),
+    );
+  }
 
-    if (!ctx.mounted) {
-      throw Exception('Dialog context is not mounted');
-    }
-
+  @override
+  Future<T?> show<T>({
+    required BuildContext context,
+    required Widget Function(BuildContext) builder,
+    bool barrierDismissible = true,
+    Color? barrierColor,
+    String? barrierLabel,
+    bool useSafeArea = true,
+    bool useRootNavigator = true,
+    RouteSettings? routeSettings,
+    Offset? anchorPoint,
+    TraversalEdgeBehavior? traversalEdgeBehavior,
+  }) {
     return showDialog<T>(
-      context: ctx,
+      context: context,
+      builder: builder,
       barrierDismissible: barrierDismissible,
-      builder: (context) {
-        return dialog(context);
-      },
+      barrierColor: barrierColor,
+      barrierLabel: barrierLabel,
+      useSafeArea: useSafeArea,
+      useRootNavigator: useRootNavigator,
+      routeSettings: routeSettings,
+      anchorPoint: anchorPoint,
+      traversalEdgeBehavior: traversalEdgeBehavior,
     );
   }
 }

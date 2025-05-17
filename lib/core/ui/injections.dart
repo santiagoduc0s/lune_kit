@@ -3,7 +3,7 @@ import 'package:lune/core/utils/utils.dart';
 
 void uiInjections() {
   /// ALERT
-  Injector.registerSingleton(
+  Injector.registerSingleton<CustomDialog>(
     AppDialog(() => AppGlobalKey.getRootContext()!),
   );
 
