@@ -5,7 +5,7 @@ Future<void> utilsInjections() async {
     Localization(() => AppGlobalKey.getRootContext()!),
   );
 
-  final keyValueStorage = KeyValueLocalStorage();
+  final keyValueStorage = BoxKeyValueLocalStorage();
   await keyValueStorage.initialize();
-  Injector.registerSingleton(keyValueStorage);
+  Injector.registerSingleton<KeyValueLocalStorage>(keyValueStorage);
 }

@@ -5,6 +5,6 @@ export 'debouncer.dart';
 export 'env.dart';
 export 'injections.dart';
 export 'injector.dart';
-export 'key_value_local_storage.dart';
+export 'local_storage/local_storage.dart';
 export 'localization.dart';
 export 'parameter.dart';

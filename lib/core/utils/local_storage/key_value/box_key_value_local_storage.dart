@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
+import 'package:lune/core/utils/local_storage/key_value/key_value.dart';
 import 'package:path_provider/path_provider.dart';
 
-/// A class that provides key-value storage.
-class KeyValueLocalStorage {
+class BoxKeyValueLocalStorage extends KeyValueLocalStorage {
   static const _boxName = 'box';
   late final Box<dynamic> _box;
 
-  /// Initializes the storage.
+  @override
   Future<void> initialize() async {
     if (kIsWeb) {
       Hive.init('');
@@ -19,22 +19,22 @@ class KeyValueLocalStorage {
     _box = await Hive.openBox(_boxName);
   }
 
-  /// Saves a [value] of type [T] with the given [key].
+  @override
   Future<void> save<T>(String key, T value) async {
     await _box.put(key, value);
   }
 
-  /// Retrieves the data associated with the given [key].
+  @override
   T? get<T>(String key, {T? defaultValue}) {
     return _box.get(key, defaultValue: defaultValue) as T?;
   }
 
-  /// Remove the data associated with the given [key].
+  @override
   Future<void> remove(String key) async {
     await _box.delete(key);
   }
 
-  /// Clears all data.
+  @override
   Future<void> clearData() async {
     await _box.clear();
   }
