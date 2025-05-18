@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:lune/config/router/router.dart';
 import 'package:lune/core/form/validators/validators.dart';
 import 'package:lune/core/ui/themes/themes.dart';
 import 'package:lune/core/utils/utils.dart';
 import 'package:lune/features/core/app_preference/ui/notifier/notifier.dart';
 import 'package:lune/features/core/auth/ui/notifiers/notifiers.dart';
-import 'package:lune/l10n/arb/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
