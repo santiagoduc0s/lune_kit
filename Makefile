@@ -1,16 +1,15 @@
+include environments.mk
+include builds.mk
+
 lint:
 	dart fix --apply
 	dart format .
 	flutter analyze
 
+cocoa:
+	rm -rf ios/Podfile.lock
+	cd ios && pod repo update
+	cd ios && pod install
+
 runner:
 	dart run build_runner build
-
-dev:
-	cp -f environments/dev/env.json env.json
-
-stg:
-	cp -f environments/stg/env.json env.json
-
-prod:
-	cp -f environments/prod/env.json env.json
