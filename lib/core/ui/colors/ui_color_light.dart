@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lune/core/theme/theme.dart';
 import 'package:lune/core/ui/colors/colors.dart';
 
 /// The light theme implementation of [UIColor].
@@ -8,138 +9,140 @@ class UIColorLight extends UIColor {
   /// Singleton instance of [UIColorLight].
   static final UIColorLight instance = UIColorLight._singleton();
 
-  @override
-  Color get primary => primarySchema[40]!;
+  final ColorScheme colorScheme = MaterialThemeCustom.lightScheme();
 
   @override
-  Color get onPrimary => primarySchema[100]!;
+  Color get primary => colorScheme.primary;
 
   @override
-  Color get primaryContainer => primarySchema[90]!;
+  Color get onPrimary => colorScheme.onPrimary;
 
   @override
-  Color get onPrimaryContainer => primarySchema[30]!;
+  Color get primaryContainer => colorScheme.primaryContainer;
 
   @override
-  Color get primaryFixed => primarySchema[90]!;
+  Color get onPrimaryContainer => colorScheme.onPrimaryContainer;
 
   @override
-  Color get primaryFixedDim => primarySchema[80]!;
+  Color get secondary => colorScheme.secondary;
 
   @override
-  Color get onPrimaryFixed => primarySchema[10]!;
+  Color get onSecondary => colorScheme.onSecondary;
 
   @override
-  Color get onPrimaryFixedVariant => primarySchema[30]!;
+  Color get secondaryContainer => colorScheme.secondaryContainer;
 
   @override
-  Color get secondary => secondarySchema[40]!;
+  Color get onSecondaryContainer => colorScheme.onSecondaryContainer;
 
   @override
-  Color get onSecondary => secondarySchema[100]!;
+  Color get tertiary => colorScheme.tertiary;
 
   @override
-  Color get secondaryContainer => secondarySchema[90]!;
+  Color get onTertiary => colorScheme.onTertiary;
 
   @override
-  Color get onSecondaryContainer => secondarySchema[30]!;
+  Color get tertiaryContainer => colorScheme.tertiaryContainer;
 
   @override
-  Color get secondaryFixed => secondarySchema[90]!;
+  Color get onTertiaryContainer => colorScheme.onTertiaryContainer;
 
   @override
-  Color get secondaryFixedDim => secondarySchema[80]!;
+  Color get error => colorScheme.error;
 
   @override
-  Color get onSecondaryFixed => secondarySchema[10]!;
+  Color get onError => colorScheme.onError;
 
   @override
-  Color get onSecondaryFixedVariant => secondarySchema[30]!;
+  Color get errorContainer => colorScheme.errorContainer;
 
   @override
-  Color get tertiary => tertiarySchema[40]!;
+  Color get onErrorContainer => colorScheme.onErrorContainer;
 
   @override
-  Color get onTertiary => tertiarySchema[100]!;
+  Color get surface => colorScheme.surface;
 
   @override
-  Color get tertiaryContainer => tertiarySchema[90]!;
+  Color get onSurface => colorScheme.onSurface;
 
   @override
-  Color get onTertiaryContainer => tertiarySchema[30]!;
+  Color get inverseSurface => colorScheme.inverseSurface;
 
   @override
-  Color get tertiaryFixed => tertiarySchema[90]!;
+  Color get onInverseSurface => colorScheme.onInverseSurface;
 
   @override
-  Color get tertiaryFixedDim => tertiarySchema[80]!;
+  Color get onSurfaceVariant => colorScheme.onSurfaceVariant;
 
   @override
-  Color get onTertiaryFixed => tertiarySchema[10]!;
+  Color get outline => colorScheme.outline;
 
   @override
-  Color get onTertiaryFixedVariant => tertiarySchema[30]!;
+  Color get inversePrimary => colorScheme.inversePrimary;
 
   @override
-  Color get error => errorSchema[40]!;
+  Color get primaryFixed => colorScheme.primaryFixed;
 
   @override
-  Color get onError => errorSchema[100]!;
+  Color get primaryFixedDim => colorScheme.primaryFixedDim;
 
   @override
-  Color get errorContainer => errorSchema[90]!;
+  Color get onPrimaryFixed => colorScheme.onPrimaryFixed;
 
   @override
-  Color get onErrorContainer => errorSchema[30]!;
+  Color get onPrimaryFixedVariant => colorScheme.onPrimaryFixedVariant;
 
   @override
-  Color get surfaceDim => neutralSchema[87]!;
+  Color get secondaryFixed => colorScheme.secondaryFixed;
 
   @override
-  Color get surface => neutralSchema[98]!;
+  Color get secondaryFixedDim => colorScheme.secondaryFixedDim;
 
   @override
-  Color get surfaceBright => neutralSchema[98]!;
+  Color get onSecondaryFixed => colorScheme.onSecondaryFixed;
 
   @override
-  Color get inverseSurface => neutralSchema[20]!;
+  Color get onSecondaryFixedVariant => colorScheme.onSecondaryFixedVariant;
 
   @override
-  Color get onInverseSurface => neutralSchema[95]!;
+  Color get tertiaryFixed => colorScheme.tertiaryFixed;
 
   @override
-  Color get surfaceContainerLowest => neutralSchema[100]!;
+  Color get tertiaryFixedDim => colorScheme.tertiaryFixedDim;
 
   @override
-  Color get surfaceContainerLow => neutralSchema[96]!;
+  Color get onTertiaryFixed => colorScheme.onTertiaryFixed;
 
   @override
-  Color get surfaceContainer => neutralSchema[94]!;
+  Color get onTertiaryFixedVariant => colorScheme.onTertiaryFixedVariant;
 
   @override
-  Color get surfaceContainerHigh => neutralSchema[92]!;
+  Color get surfaceDim => colorScheme.surfaceDim;
 
   @override
-  Color get surfaceContainerHighest => neutralSchema[90]!;
+  Color get surfaceBright => colorScheme.surfaceBright;
 
   @override
-  Color get onSurface => neutralSchema[10]!;
+  Color get surfaceContainerLowest => colorScheme.surfaceContainerLowest;
 
   @override
-  Color get onSurfaceVariant => neutralVariantSchema[30]!;
+  Color get surfaceContainerLow => colorScheme.surfaceContainerLow;
 
   @override
-  Color get outline => neutralVariantSchema[50]!;
+  Color get surfaceContainer => colorScheme.surfaceContainer;
 
   @override
-  Color get outlineVariant => neutralVariantSchema[80]!;
+  Color get surfaceContainerHigh => colorScheme.surfaceContainerHigh;
 
   @override
-  Color get scrim => neutralSchema[0]!;
+  Color get surfaceContainerHighest => colorScheme.surfaceContainerHighest;
 
   @override
-  Color get shadow => neutralSchema[0]!;
+  Color get outlineVariant => colorScheme.outlineVariant;
 
   @override
-  Color get inversePrimary => primarySchema[80]!;
+  Color get scrim => colorScheme.scrim;
+
+  @override
+  Color get shadow => colorScheme.shadow;
 }

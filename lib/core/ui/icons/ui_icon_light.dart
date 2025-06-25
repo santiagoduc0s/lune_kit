@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:lune/core/ui/assets/assets.dart';
 import 'package:lune/core/ui/icons/icons.dart';
 import 'package:lune/core/ui/spacing/spacing.dart';
@@ -15,7 +14,7 @@ class UIIconLight implements UIIcon {
 
   @override
   Widget logo({double? size}) {
-    return SvgPicture.asset(
+    return Image.asset(
       _assets.logo,
       height: size ?? 10.space,
       width: size ?? 10.space,

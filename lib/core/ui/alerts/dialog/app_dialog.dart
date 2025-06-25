@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lune/core/ui/alerts/dialog/dialog.dart';
 
 class AppDialog extends CustomDialog {
-  AppDialog(this.getContext);
+  AppDialog(this.context);
 
-  final BuildContext Function() getContext;
+  final BuildContext Function() context;
 
   @override
   Future<bool> confirm({
@@ -13,7 +13,7 @@ class AppDialog extends CustomDialog {
     required String cancelText,
   }) async {
     final result = await show<bool>(
-      context: getContext(),
+      context: context(),
       builder: (_) => ConfirmDialog(
         message: message,
         confirmText: confirmText,
@@ -29,7 +29,7 @@ class AppDialog extends CustomDialog {
     required String confirmText,
   }) {
     return show<void>(
-      context: getContext(),
+      context: context(),
       builder: (_) => InfoDialog(
         message: message,
         confirmText: confirmText,
@@ -52,6 +52,32 @@ class AppDialog extends CustomDialog {
   }) {
     return showDialog<T>(
       context: context,
+      builder: builder,
+      barrierDismissible: barrierDismissible,
+      barrierColor: barrierColor,
+      barrierLabel: barrierLabel,
+      useSafeArea: useSafeArea,
+      useRootNavigator: useRootNavigator,
+      routeSettings: routeSettings,
+      anchorPoint: anchorPoint,
+      traversalEdgeBehavior: traversalEdgeBehavior,
+    );
+  }
+
+  @override
+  Future<T?> showWithoutContext<T>({
+    required Widget Function(BuildContext) builder,
+    bool barrierDismissible = true,
+    Color? barrierColor,
+    String? barrierLabel,
+    bool useSafeArea = true,
+    bool useRootNavigator = true,
+    RouteSettings? routeSettings,
+    Offset? anchorPoint,
+    TraversalEdgeBehavior? traversalEdgeBehavior,
+  }) {
+    return show<T>(
+      context: context(),
       builder: builder,
       barrierDismissible: barrierDismissible,
       barrierColor: barrierColor,

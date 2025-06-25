@@ -1,27 +1,36 @@
 import 'dart:async';
-
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lune/config/config.dart';
-import 'package:lune/core/ui/injections.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:lune/core/config/config.dart';
+import 'package:lune/core/dependencies/dependencies.dart';
 import 'package:lune/core/utils/utils.dart';
-import 'package:lune/features/injections.dart';
-
-Future<void> injectModules() async {
-  configInjections();
-  uiInjections();
-  await utilsInjections();
-  await featureInjections();
-}
+import 'package:lune/firebase_options.dart';
+import 'package:provider/provider.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
-  WidgetsFlutterBinding.ensureInitialized();
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
-  await injectModules();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
+  await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(
+    Env.environment == 'prod',
+  );
 
   AppLogger.instance.debug(Env.environment);
 
-  /// Expand the time to show more time the splash screen
-  await Future.delayed(const Duration(milliseconds: 1000), () {});
-
-  runApp(await builder());
+  runApp(
+    MultiProvider(
+      providers: providers,
+      child: await builder(),
+    ),
+  );
 }

@@ -5,4 +5,7 @@ class NullableParameter<T> {
 
   /// The value of the parameter.
   final T value;
+
+  bool get isNull => value == null;
+  bool get isNotNull => value != null;
 }

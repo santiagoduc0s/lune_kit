@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lune/features/core/main/ui/ui.dart';
+import 'package:lune/ui/main/app.dart';
 
 void main() {
   group('App', () {

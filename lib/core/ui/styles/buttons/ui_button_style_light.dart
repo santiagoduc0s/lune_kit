@@ -73,7 +73,7 @@ class UIButtonStyleLight extends UIButtonStyle {
       ),
       shape: WidgetStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(2.space),
+          borderRadius: BorderRadius.circular(3.space),
         ),
       ),
       textStyle: WidgetStateProperty.all<TextStyle>(

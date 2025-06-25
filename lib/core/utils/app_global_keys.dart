@@ -11,7 +11,7 @@ class AppGlobalKey {
     return rootNavigatorKey.currentContext;
   }
 
-  static ScaffoldMessengerState? scaffoldMessengerState() {
+  static ScaffoldMessengerState? getScaffoldMessengerState() {
     return scaffoldMessengerKey.currentState;
   }
 }

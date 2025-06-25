@@ -17,7 +17,7 @@ class UITextStyleLight extends UITextStyle {
   @override
   TextStyle get baseTextStyle {
     return TextStyle(
-      fontFamily: GoogleFonts.openSans().fontFamily,
+      fontFamily: GoogleFonts.sora().fontFamily,
       fontWeight: UIFontWeight.regular,
       color: uiColor.onSurface,
     );

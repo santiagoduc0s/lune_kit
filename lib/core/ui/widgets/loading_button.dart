@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lune/core/extensions/extensions.dart';
-import 'package:lune/core/ui/spacing/spacing.dart';
 
 /// Type of button to be used in [LoadingButton].
 enum ButtonType {
@@ -20,8 +18,7 @@ enum ButtonType {
   text;
 }
 
-/// A button that shows a loading indicator without changing its size.
-class LoadingButton extends StatefulWidget {
+class LoadingButton extends StatelessWidget {
   /// Creates a [LoadingButton].
   const LoadingButton({
     required this.child,
@@ -34,7 +31,6 @@ class LoadingButton extends StatefulWidget {
     this.loader,
     this.strokeWidth,
     this.loaderColor,
-    this.transitionBuilder,
   });
 
   /// Whether the button is in loading state.
@@ -61,122 +57,75 @@ class LoadingButton extends StatefulWidget {
   /// The color of the loader.
   final Color? loaderColor;
 
-  /// The transition builder for the loading animation.
-  final AnimatedSwitcherTransitionBuilder? transitionBuilder;
-
-  /// The duration of the loading animation.
+  /// The duration of the opacity animation.
   final Duration duration;
 
-  @override
-  State<LoadingButton> createState() => _LoadingButtonState();
-}
-
-class _LoadingButtonState extends State<LoadingButton> {
-  double _childHeight = 0;
-  double _childWidth = 0;
-  final GlobalKey _childKey = GlobalKey(debugLabel: 'loading-button');
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _updateChildSize());
-  }
-
-  void _updateChildSize() {
-    final renderBox =
-        _childKey.currentContext?.findRenderObject() as RenderBox?;
-
-    if (renderBox == null || !context.mounted) return;
-
-    setState(() {
-      _childHeight = renderBox.size.height;
-      _childWidth = renderBox.size.width;
-    });
-  }
-
-  Widget _defaultFadeTransition(Widget child, Animation<double> animation) {
-    return FadeTransition(
-      opacity: animation,
-      child: child,
-    );
-  }
-
   void _onPressed() {
-    if (widget.isLoading) return;
-    widget.onPressed?.call();
+    if (isLoading) return;
+    onPressed?.call();
+  }
+
+  Widget _buildContent(BuildContext context) {
+    final loaderIndicator = loader ??
+        SizedBox(
+          width: 24,
+          height: 24,
+          child: CircularProgressIndicator(
+            strokeWidth: strokeWidth ?? 2.0,
+            valueColor: AlwaysStoppedAnimation<Color>(
+              loaderColor ?? Theme.of(context).colorScheme.onPrimary,
+            ),
+          ),
+        );
+
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        AnimatedOpacity(
+          opacity: isLoading ? 0 : 1,
+          duration: duration,
+          child: child,
+        ),
+        if (isLoading) loaderIndicator,
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final colorsProvider = context.colors;
+    final btnChild = _buildContent(context);
 
-    final childWidget = SizedBox(
-      key: _childHeight == 0 ? _childKey : UniqueKey(),
-      child: widget.child,
-    );
-
-    final content = AnimatedSwitcher(
-      duration: widget.duration,
-      transitionBuilder: widget.transitionBuilder ?? _defaultFadeTransition,
-      child: widget.isLoading
-          ? SizedBox(
-              width: _childWidth,
-              height: _childHeight,
-              child: SizedBox(
-                width: _childHeight,
-                height: _childHeight,
-                child: widget.loader ??
-                    FittedBox(
-                      child: CircularProgressIndicator(
-                        strokeWidth: widget.strokeWidth ?? 0.25.space,
-                        color: widget.loaderColor ?? colorsProvider.onPrimary,
-                      ),
-                    ),
-              ),
-            )
-          : childWidget,
-    );
-
-    if (widget.type == ButtonType.elevated) {
-      return ElevatedButton(
-        onPressed: widget.onPressed == null ? null : _onPressed,
-        style: widget.style,
-        child: content,
-      );
+    switch (type) {
+      case ButtonType.elevated:
+        return ElevatedButton(
+          onPressed: onPressed == null ? null : _onPressed,
+          style: style,
+          child: btnChild,
+        );
+      case ButtonType.outlined:
+        return OutlinedButton(
+          onPressed: onPressed == null ? null : _onPressed,
+          style: style,
+          child: btnChild,
+        );
+      case ButtonType.text:
+        return TextButton(
+          onPressed: onPressed == null ? null : _onPressed,
+          style: style,
+          child: btnChild,
+        );
+      case ButtonType.tonal:
+        return FilledButton.tonal(
+          onPressed: onPressed == null ? null : _onPressed,
+          style: style,
+          child: btnChild,
+        );
+      case ButtonType.filled:
+        return FilledButton(
+          onPressed: onPressed == null ? null : _onPressed,
+          style: style,
+          child: btnChild,
+        );
     }
-
-    if (widget.type == ButtonType.outlined) {
-      return OutlinedButton(
-        onPressed: widget.onPressed == null ? null : _onPressed,
-        style: widget.style,
-        child: content,
-      );
-    }
-
-    if (widget.type == ButtonType.text) {
-      return TextButton(
-        onPressed: widget.onPressed == null ? null : _onPressed,
-        style: widget.style,
-        child: content,
-      );
-    }
-
-    if (widget.type == ButtonType.tonal) {
-      return FilledButton.tonal(
-        onPressed: widget.onPressed == null ? null : _onPressed,
-        style: widget.style,
-        child: content,
-      );
-    }
-
-    if (widget.type == ButtonType.filled) {
-      return FilledButton(
-        onPressed: widget.onPressed == null ? null : _onPressed,
-        style: widget.style,
-        child: content,
-      );
-    }
-
-    throw Exception('Button type not supported');
   }
 }

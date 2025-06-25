@@ -2,4 +2,6 @@
 abstract class UIAsset {
   /// Brand logo.
   String get logo;
+
+  String get publicOnboardPage1;
 }

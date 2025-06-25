@@ -25,6 +25,7 @@ class RouteAnimation {
         );
       },
       transitionDuration: duration,
+      reverseTransitionDuration: duration,
     );
   }
 
@@ -34,10 +35,12 @@ class RouteAnimation {
     required Widget child,
     Duration duration = const Duration(milliseconds: 300),
     Curve curve = Curves.easeInOut,
+    bool opaque = true,
   }) {
     return CustomTransitionPage<void>(
       key: ValueKey(key),
       child: child,
+      opaque: opaque,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         final curvedAnimation = CurvedAnimation(
           parent: animation,
@@ -53,6 +56,7 @@ class RouteAnimation {
         );
       },
       transitionDuration: duration,
+      reverseTransitionDuration: duration,
     );
   }
 
@@ -87,6 +91,7 @@ class RouteAnimation {
         );
       },
       transitionDuration: duration,
+      reverseTransitionDuration: duration,
     );
   }
 
@@ -115,6 +120,7 @@ class RouteAnimation {
         );
       },
       transitionDuration: duration,
+      reverseTransitionDuration: duration,
     );
   }
 
@@ -143,6 +149,7 @@ class RouteAnimation {
         );
       },
       transitionDuration: duration,
+      reverseTransitionDuration: duration,
     );
   }
 
@@ -158,6 +165,7 @@ class RouteAnimation {
         return child;
       },
       transitionDuration: Duration.zero,
+      reverseTransitionDuration: Duration.zero,
     );
   }
 
@@ -186,6 +194,7 @@ class RouteAnimation {
         );
       },
       transitionDuration: duration,
+      reverseTransitionDuration: duration,
     );
   }
 }

@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:logger/logger.dart';
 
 enum LogLevel {
@@ -11,8 +14,8 @@ class AppLogger {
   AppLogger._singleton();
 
   static final AppLogger instance = AppLogger._singleton();
-
   final logger = Logger();
+  final _firestore = FirebaseFirestore.instance;
 
   Future<void> log(
     String message, {
@@ -28,6 +31,19 @@ class AppLogger {
       case LogLevel.warning:
         logger.w(message, stackTrace: stackTrace);
       case LogLevel.error:
+        unawaited(
+          _firestore.collection('logs').add({
+            'message': message,
+            'level': level.name,
+            'timestamp': DateTime.now().toUtc().toIso8601String(),
+            'stackTrace': stackTrace?.toString(),
+            'metadata': metadata,
+            // ignore: body_might_complete_normally_catch_error, inference_failure_on_untyped_parameter
+          }).catchError((e) {
+            // ignore: avoid_print
+            print('Failed to log message to Firestore: $e');
+          }),
+        );
         logger.e(message, stackTrace: stackTrace);
     }
   }

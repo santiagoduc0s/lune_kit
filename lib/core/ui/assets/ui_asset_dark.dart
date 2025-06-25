@@ -9,5 +9,8 @@ class UIAssetDark implements UIAsset {
   static final UIAssetDark instance = UIAssetDark._singleton();
 
   @override
-  String get logo => Assets.dark.icons.logo;
+  String get logo => Assets.dark.images.logo.path;
+
+  @override
+  String get publicOnboardPage1 => Assets.dark.images.publicOnboardPage1.path;
 }
