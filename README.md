@@ -1,18 +1,5 @@
 # Lune Kit
 
-## Config
-
-## Melos
-
-```
-# Install
-dart pub global activate melos
-
-melos bootstrap
-```
-
----
-
 ## Set Id
 
 Check the configuration in ```config/app_id/README.md```

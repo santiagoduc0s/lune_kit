@@ -1,8 +1,0 @@
-name: lune_kit
-packages:
-  - packages/*
-
-scripts:
-  lint:
-    run: make lint
-    includeRoot: true
