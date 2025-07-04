@@ -96,7 +96,7 @@ class DeviceRepositoryImpl implements DeviceRepository {
       return iosInfo.modelName;
     } else if (defaultTargetPlatform == TargetPlatform.android) {
       final androidInfo = await _deviceInfo.androidInfo;
-      return androidInfo.id;
+      return androidInfo.model;
     } else {
       throw UnsupportedError('Unsupported platform');
     }

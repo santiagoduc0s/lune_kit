@@ -140,8 +140,6 @@ class AuthRepositoryImpl extends AuthRepository {
       'firstName': firstName,
       'lastName': lastName,
       'photo': photoPath,
-      'birthday': null,
-      'estimatedLifeYears': null,
       'updatedAt': FieldValue.serverTimestamp(),
       'createdAt': FieldValue.serverTimestamp(),
     };

@@ -9,7 +9,7 @@ class UIColorDark extends UIColor {
   /// Singleton instance of [UIColorDark].
   static final UIColorDark instance = UIColorDark._singleton();
 
-  final ColorScheme colorScheme = MaterialThemeCustom.darkScheme();
+  final ColorScheme colorScheme = MaterialTheme.darkScheme();
 
   @override
   Color get primary => colorScheme.primary;

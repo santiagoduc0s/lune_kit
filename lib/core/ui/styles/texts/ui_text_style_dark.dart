@@ -15,7 +15,7 @@ class UITextStyleDark extends UITextStyle {
   @override
   TextStyle get baseTextStyle {
     return TextStyle(
-      fontFamily: GoogleFonts.sora().fontFamily,
+      fontFamily: GoogleFonts.openSans().fontFamily,
       fontWeight: UIFontWeight.regular,
       color: uiColor.onSurface,
     );

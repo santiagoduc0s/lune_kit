@@ -1,3 +1,5 @@
+import 'dart:io';
+import 'package:flutter/foundation.dart'; // added to check kIsWeb
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lune/core/extensions/extensions.dart';
@@ -86,12 +88,19 @@ class PhotoProfilePickerField extends StatelessWidget {
                 child: photo != null
                     ? ClipOval(
                         key: const ValueKey('photo'),
-                        child: Image.asset(
-                          photo,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                        ),
+                        child: kIsWeb
+                            ? Image.network(
+                                photo,
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              )
+                            : Image.file(
+                                File(photo),
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              ),
                       )
                     : Center(
                         key: const ValueKey('icon'),
@@ -117,10 +126,11 @@ class PhotoProfilePickerField extends StatelessWidget {
                     value: 'gallery',
                     child: Text(l10n.gallery),
                   ),
-                  PopupMenuItem(
-                    value: 'camera',
-                    child: Text(l10n.takePicture),
-                  ),
+                  if (!kIsWeb)
+                    PopupMenuItem(
+                      value: 'camera',
+                      child: Text(l10n.takePicture),
+                    ),
                   if (photo != null)
                     PopupMenuItem(
                       value: 'delete',
@@ -131,10 +141,13 @@ class PhotoProfilePickerField extends StatelessWidget {
                   switch (value) {
                     case 'gallery':
                       pickGallery();
+                      break;
                     case 'camera':
                       pickCamera();
+                      break;
                     case 'delete':
                       removeImage();
+                      break;
                   }
                 },
                 child: Container(

@@ -9,7 +9,7 @@ class UIColorLight extends UIColor {
   /// Singleton instance of [UIColorLight].
   static final UIColorLight instance = UIColorLight._singleton();
 
-  final ColorScheme colorScheme = MaterialThemeCustom.lightScheme();
+  final ColorScheme colorScheme = MaterialTheme.lightScheme();
 
   @override
   Color get primary => colorScheme.primary;

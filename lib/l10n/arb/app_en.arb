@@ -298,59 +298,22 @@
   "@biometricSwitcher_everyHour": {},
   "biometricSwitcher_everyDay": "Every day",
   "@biometricSwitcher_everyDay": {},
-  "home_title": "Life is a journey",
+  "home_title": "Title",
   "@home_title": {},
   "home_subTitle": "Calculate your remaining time",
   "@home_subTitle": {},
-  "home_yourBirthday": "Your birthday",
-  "@home_yourBirthday": {},
-  "home_yourExpectation": "Your life expectancy (years)",
-  "@home_yourExpectation": {},
   "calculate": "Calculate",
   "@calculate": {},
   "enter_birthday": "Enter your birthday",
   "@enter_birthday": {},
-  "enter_expectation": "Enter your life expectancy",
-  "@enter_expectation": {},
-  "timeRemaining": "Time remaining",
-  "@timeRemaining": {},
-  "remainingDate": "{days, plural, =1{1 day} other{{days} days}} ({weeks, plural, =1{1 week} other{{weeks} weeks}})",
-  "@remainingDate": {
-    "placeholders": {
-      "days": {
-        "type": "int",
-        "format": "decimalPattern",
-        "optionalParameters": {
-          "decimalDigits": 2
-        }
-      },
-      "weeks": {
-        "type": "int",
-        "format": "decimalPattern",
-        "optionalParameters": {
-          "decimalDigits": 2
-        }
-      }
-    }
-  },
-  "onboard_title": "Welcome to Counter Life",
+  "onboard_title": "Welcome",
   "@onboard_title": {},
-  "onboard_description": "Life is measured in weeks. Each one is a precious opportunity to create, love, and grow. How will you spend your remaining weeks?",
+  "onboard_description": "Description",
   "@onboard_description": {},
   "onboard_start": "Start",
   "@onboard_start": {},
   "systemDefault": "System Default",
   "@systemDefault": {},
-  "settings_subTitle": "Customize your experience",
-  "@settings_subTitle": {},
-  "weeklyReminders": "Weekly Reminders",
-  "@weeklyReminders": {},
-  "weeklyRemindersDescription": "Stay focused on your life journey with weekly updates",
-  "@weeklyRemindersDescription": {},
-  "dailyReminders": "Daily Reminders",
-  "@dailyReminders": {},
-  "dailyRemindersDescription": "Get notifications to focus on what really matters",
-  "@dailyRemindersDescription": {},
   "legal": "Legal",
   "@legal": {},
   "termsOfService": "Terms of Service",
@@ -390,23 +353,5 @@
   "confirmSignInNotification": "To send notifications you must be signed in. Do you want to sign in?",
   "@confirmSignInNotification": {},
   "confirmSignInProfile": "To access your profile you must be signed in. Do you want to sign in?",
-  "@confirmSignInProfile": {},
-  "passiveIncome_title": "Passive Income Calculator",
-  "@passiveIncome_title": {},
-  "passiveIncome_description": "Calculate how much you need to save each month to reach your passive income goal.",
-  "@passiveIncome_description": {},
-  "passiveIncome_monthlyGoal": "Monthly Passive Income Goal ($)",
-  "@passiveIncome_monthlyGoal": {},
-  "passiveIncome_annualReturn": "Annual Return Rate (%)",
-  "@passiveIncome_annualReturn": {},
-  "passiveIncome_years": "Years to Goal",
-  "@passiveIncome_years": {},
-  "passiveIncome_resultTitle": "Required Monthly Saving",
-  "@passiveIncome_resultTitle": {},
-  "passiveIncome_result": "{amount} / month",
-  "@passiveIncome_result": {"placeholders": {"amount": {"type": "String"}}},
-  "tab_lifeJourney": "Life Journey",
-  "@tab_lifeJourney": {},
-  "tab_passiveIncome": "Passive Income",
-  "@tab_passiveIncome": {}
+  "@confirmSignInProfile": {}
 }

@@ -66,21 +66,7 @@ class SettingsPage extends StatelessWidget {
                     curve: Curves.easeInOut,
                   )
                   .fadeIn(),
-              const SizedBox(height: 8),
-              Text(
-                l10n.settings_subTitle,
-                style: textStyles.bodyLarge.copyWith(
-                  color: colors.onSurface.withValues(alpha: 0.7),
-                ),
-              )
-                  .animate()
-                  .slideY(
-                    delay: 400.ms,
-                    duration: 700.ms,
-                    curve: Curves.easeInOut,
-                  )
-                  .fadeIn(),
-              SizedBox(height: 5.space),
+              3.spaceY,
               Card(
                 elevation: 0,
                 color: colors.surface,

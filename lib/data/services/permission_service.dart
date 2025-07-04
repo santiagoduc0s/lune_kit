@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:lune/domain/entities/entities.dart';
 import 'package:permission_handler/permission_handler.dart' as ph;
 
@@ -32,6 +35,10 @@ class PermissionService {
   }
 
   Future<PermissionStatus> status(PermissionType permission) async {
+    if ((kIsWeb || Platform.isAndroid) && permission == PermissionType.photos) {
+      return PermissionStatus.granted;
+    }
+
     final raw = await _toPermission(permission).status;
     return _mapStatus(raw);
   }

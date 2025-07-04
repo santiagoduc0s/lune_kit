@@ -54,5 +54,20 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSCameraUsageDescription</key>
+		<string>This app uses the camera to let you take a photo for your profile picture.</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>This app uses your photo library so you can choose a photo to set as your profile picture.</string>
+		<key>ITSAppUsesNonExemptEncryption</key>
+		<false/>
+		<!-- <key>NSUserNotificationUsageDescription</key>
+		<string>We need to send you notifications to keep you updated with your daily and weakly reminders.</string>
+		<key>UIApplicationSupportsIndirectInputEvents</key>
+		<true/>
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>remote-notification</string>
+			<string>fetch</string>
+		</array> -->
 	</dict>
 </plist>
