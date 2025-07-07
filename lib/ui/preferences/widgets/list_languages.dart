@@ -99,6 +99,8 @@ class ListLanguages extends StatelessWidget {
 
           if (!context.mounted) return;
 
+          if (locale == null) return;
+
           await context.read<PreferenceNotifier>().setLocale(locale);
         },
         style: buttonStyles.primaryFilled,
